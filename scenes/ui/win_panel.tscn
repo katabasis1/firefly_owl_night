@@ -1,0 +1,216 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/win_panel.gd" id="1_r"]
+[ext_resource type="Texture2D" path="res://art/confetti.tres" id="2_r"]
+[ext_resource type="FontFile" path="res://ui/NotoSans-Black.ttf" id="3_r"]
+[ext_resource type="Texture2D" path="res://art/glow.tres" id="4_r"]
+[ext_resource type="Material" path="res://art/add.tres" id="5_r"]
+[ext_resource type="Script" path="res://scripts/juicy_button.gd" id="6_r"]
+
+[node name="WinPanel" type="Control"]
+layout_mode = 3
+script = ExtResource("1_r")
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+color = Color(0.02, 0.01, 0.08, 0.6)
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Card" type="Panel" parent="."]
+pivot_offset = Vector2(260.0, 280.0)
+offset_left = 100.0
+offset_top = 340.0
+offset_right = 620.0
+offset_bottom = 900.0
+
+[node name="Title" type="Label" parent="Card"]
+offset_left = 0.0
+offset_top = 34.0
+offset_right = 520.0
+offset_bottom = 108.0
+text = "Светлячок дома!"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 50
+theme_override_colors/font_color = Color(1.0, 0.86, 0.45, 1.0)
+theme_override_fonts/font = ExtResource("3_r")
+
+[node name="Stars" type="Node2D" parent="Card"]
+position = Vector2(260.0, 205.0)
+
+[node name="S1" type="Node2D" parent="Card/Stars"]
+position = Vector2(-135.0, 22.0)
+scale = Vector2(0.8, 0.8)
+
+[node name="Bg" type="Polygon2D" parent="Card/Stars/S1"]
+color = Color(0.2, 0.14, 0.34, 1.0)
+polygon = PackedVector2Array(0.0, -54.0, 14.695, -20.225, 51.357, -16.687, 23.776, 7.725, 31.74, 43.687, 0.0, 25.0, -31.74, 43.687, -23.776, 7.725, -51.357, -16.687, -14.695, -20.225)
+antialiased = true
+
+[node name="Fill" type="Node2D" parent="Card/Stars/S1"]
+
+[node name="Glow" type="Sprite2D" parent="Card/Stars/S1/Fill"]
+modulate = Color(1.0, 0.8, 0.3, 0.6)
+position = Vector2(0.0, 0.0)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_r")
+material = ExtResource("5_r")
+
+[node name="Shape" type="Polygon2D" parent="Card/Stars/S1/Fill"]
+color = Color(1.0, 0.82, 0.3, 1.0)
+polygon = PackedVector2Array(0.0, -54.0, 14.695, -20.225, 51.357, -16.687, 23.776, 7.725, 31.74, 43.687, 0.0, 25.0, -31.74, 43.687, -23.776, 7.725, -51.357, -16.687, -14.695, -20.225)
+antialiased = true
+
+[node name="Shine" type="Polygon2D" parent="Card/Stars/S1/Fill"]
+color = Color(1.0, 0.93, 0.6, 1.0)
+polygon = PackedVector2Array(-2.0, -34.0, 6.229, -15.326, 26.532, -13.271, 11.315, 0.326, 15.634, 20.271, -2.0, 10.0, -19.634, 20.271, -15.315, 0.326, -30.532, -13.271, -10.229, -15.326)
+antialiased = true
+
+[node name="S2" type="Node2D" parent="Card/Stars"]
+position = Vector2(0.0, -8.0)
+scale = Vector2(1.1, 1.1)
+
+[node name="Bg" type="Polygon2D" parent="Card/Stars/S2"]
+color = Color(0.2, 0.14, 0.34, 1.0)
+polygon = PackedVector2Array(0.0, -54.0, 14.695, -20.225, 51.357, -16.687, 23.776, 7.725, 31.74, 43.687, 0.0, 25.0, -31.74, 43.687, -23.776, 7.725, -51.357, -16.687, -14.695, -20.225)
+antialiased = true
+
+[node name="Fill" type="Node2D" parent="Card/Stars/S2"]
+
+[node name="Glow" type="Sprite2D" parent="Card/Stars/S2/Fill"]
+modulate = Color(1.0, 0.8, 0.3, 0.6)
+position = Vector2(0.0, 0.0)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_r")
+material = ExtResource("5_r")
+
+[node name="Shape" type="Polygon2D" parent="Card/Stars/S2/Fill"]
+color = Color(1.0, 0.82, 0.3, 1.0)
+polygon = PackedVector2Array(0.0, -54.0, 14.695, -20.225, 51.357, -16.687, 23.776, 7.725, 31.74, 43.687, 0.0, 25.0, -31.74, 43.687, -23.776, 7.725, -51.357, -16.687, -14.695, -20.225)
+antialiased = true
+
+[node name="Shine" type="Polygon2D" parent="Card/Stars/S2/Fill"]
+color = Color(1.0, 0.93, 0.6, 1.0)
+polygon = PackedVector2Array(-2.0, -34.0, 6.229, -15.326, 26.532, -13.271, 11.315, 0.326, 15.634, 20.271, -2.0, 10.0, -19.634, 20.271, -15.315, 0.326, -30.532, -13.271, -10.229, -15.326)
+antialiased = true
+
+[node name="S3" type="Node2D" parent="Card/Stars"]
+position = Vector2(135.0, 22.0)
+scale = Vector2(0.8, 0.8)
+
+[node name="Bg" type="Polygon2D" parent="Card/Stars/S3"]
+color = Color(0.2, 0.14, 0.34, 1.0)
+polygon = PackedVector2Array(0.0, -54.0, 14.695, -20.225, 51.357, -16.687, 23.776, 7.725, 31.74, 43.687, 0.0, 25.0, -31.74, 43.687, -23.776, 7.725, -51.357, -16.687, -14.695, -20.225)
+antialiased = true
+
+[node name="Fill" type="Node2D" parent="Card/Stars/S3"]
+
+[node name="Glow" type="Sprite2D" parent="Card/Stars/S3/Fill"]
+modulate = Color(1.0, 0.8, 0.3, 0.6)
+position = Vector2(0.0, 0.0)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("4_r")
+material = ExtResource("5_r")
+
+[node name="Shape" type="Polygon2D" parent="Card/Stars/S3/Fill"]
+color = Color(1.0, 0.82, 0.3, 1.0)
+polygon = PackedVector2Array(0.0, -54.0, 14.695, -20.225, 51.357, -16.687, 23.776, 7.725, 31.74, 43.687, 0.0, 25.0, -31.74, 43.687, -23.776, 7.725, -51.357, -16.687, -14.695, -20.225)
+antialiased = true
+
+[node name="Shine" type="Polygon2D" parent="Card/Stars/S3/Fill"]
+color = Color(1.0, 0.93, 0.6, 1.0)
+polygon = PackedVector2Array(-2.0, -34.0, 6.229, -15.326, 26.532, -13.271, 11.315, 0.326, 15.634, 20.271, -2.0, 10.0, -19.634, 20.271, -15.315, 0.326, -30.532, -13.271, -10.229, -15.326)
+antialiased = true
+
+[node name="Cap1" type="Label" parent="Card"]
+offset_left = 35.0
+offset_top = 258.0
+offset_right = 215.0
+offset_bottom = 290.0
+text = "ДОМ"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(1.0, 1.0, 1.0, 1.0)
+
+[node name="Cap2" type="Label" parent="Card"]
+offset_left = 170.0
+offset_top = 258.0
+offset_right = 350.0
+offset_bottom = 290.0
+text = "ВСЯ РОСА"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(1.0, 1.0, 1.0, 1.0)
+
+[node name="Cap3" type="Label" parent="Card"]
+offset_left = 305.0
+offset_top = 258.0
+offset_right = 485.0
+offset_bottom = 290.0
+text = "ЭКОНОМНО"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(1.0, 1.0, 1.0, 1.0)
+
+[node name="Info" type="Label" parent="Card"]
+offset_left = 0.0
+offset_top = 298.0
+offset_right = 520.0
+offset_bottom = 346.0
+text = "Роса 0/3  ·  Свет 0 / 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 26
+theme_override_colors/font_color = Color(0.7, 0.92, 1.0, 1.0)
+
+[node name="NextBtn" type="Button" parent="Card"]
+text = "ДАЛЕЕ"
+script = ExtResource("6_r")
+offset_left = 100.0
+offset_top = 376.0
+offset_right = 420.0
+offset_bottom = 468.0
+theme_override_font_sizes/font_size = 46
+
+[node name="RetryBtn" type="Button" parent="Card"]
+offset_left = 150.0
+offset_top = 486.0
+offset_right = 370.0
+offset_bottom = 542.0
+text = "ЗАНОВО"
+theme_override_font_sizes/font_size = 28
+theme_type_variation = &"SecondaryButton"
+script = ExtResource("6_r")
+
+[node name="Confetti" type="CPUParticles2D" parent="."]
+position = Vector2(360.0, -30.0)
+emitting = false
+amount = 90
+lifetime = 3.0
+one_shot = true
+explosiveness = 0.85
+texture = ExtResource("2_r")
+emission_shape = 3
+emission_rect_extents = Vector2(360.0, 10.0)
+direction = Vector2(0.0, 1.0)
+spread = 40.0
+gravity = Vector2(0.0, 380.0)
+initial_velocity_min = 150.0
+initial_velocity_max = 450.0
+angular_velocity_min = -420.0
+angular_velocity_max = 420.0
+scale_amount_min = 0.8
+scale_amount_max = 1.5
+color = Color(1.0, 0.45, 0.45, 1.0)
+hue_variation_min = -1.0
+hue_variation_max = 1.0

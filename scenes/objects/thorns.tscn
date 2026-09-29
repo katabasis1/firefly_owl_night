@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/thorns.gd" id="1_r"]
+[ext_resource type="Texture2D" path="res://art/glow.tres" id="2_r"]
+[ext_resource type="Material" path="res://art/add.tres" id="3_r"]
+
+[node name="Thorns" type="Node2D"]
+script = ExtResource("1_r")
+
+[node name="Glow" type="Sprite2D" parent="."]
+modulate = Color(0.9, 0.1, 0.35, 0.35)
+position = Vector2(0.0, 0.0)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("2_r")
+material = ExtResource("3_r")
+
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="Spikes" type="Polygon2D" parent="Visual"]
+color = Color(0.26, 0.06, 0.2, 1.0)
+polygon = PackedVector2Array(0.0, -60.0, 9.579, -32.623, 32.438, -50.475, 25.695, -22.265, 54.578, -24.925, 33.654, -4.839, 59.389, 8.539, 30.927, 14.124, 45.345, 39.292, 18.382, 28.603, 16.904, 57.57, 0.0, 34.0, -16.904, 57.57, -18.382, 28.603, -45.345, 39.292, -30.927, 14.124, -59.389, 8.539, -33.654, -4.839, -54.578, -24.925, -25.695, -22.265, -32.438, -50.475, -9.579, -32.623)
+antialiased = true
+
+[node name="Spikes2" type="Polygon2D" parent="Visual"]
+color = Color(0.37, 0.09, 0.27, 1.0)
+polygon = PackedVector2Array(12.96, -44.137, 14.057, -21.873, 34.764, -30.124, 23.65, -10.801, 45.532, -6.546, 25.735, 3.7, 41.843, 19.109, 19.649, 17.026, 24.869, 38.698, 7.325, 24.947, 0.0, 46.0, -7.325, 24.947, -24.869, 38.698, -19.649, 17.026, -41.843, 19.109, -25.735, 3.7, -45.532, -6.546, -23.65, -10.801, -34.764, -30.124, -14.057, -21.873, -12.96, -44.137, 0.0, -26.0)
+antialiased = true
+
+[node name="Core" type="Polygon2D" parent="Visual"]
+color = Color(0.16, 0.03, 0.12, 1.0)
+polygon = PackedVector2Array(27.0, 0.0, 26.481, 5.267, 24.945, 10.332, 22.45, 15.0, 19.092, 19.092, 15.0, 22.45, 10.332, 24.945, 5.267, 26.481, 0.0, 27.0, -5.267, 26.481, -10.332, 24.945, -15.0, 22.45, -19.092, 19.092, -22.45, 15.0, -24.945, 10.332, -26.481, 5.267, -27.0, 0.0, -26.481, -5.267, -24.945, -10.332, -22.45, -15.0, -19.092, -19.092, -15.0, -22.45, -10.332, -24.945, -5.267, -26.481, 0.0, -27.0, 5.267, -26.481, 10.332, -24.945, 15.0, -22.45, 19.092, -19.092, 22.45, -15.0, 24.945, -10.332, 26.481, -5.267)
+antialiased = true
+
+[node name="Vine1" type="Line2D" parent="Visual"]
+points = PackedVector2Array(17.196, 5.319, 15.531, 9.1, 13.047, 12.401, 9.876, 15.048, 6.186, 16.904, 2.169, 17.869, -1.962, 17.893, -5.989, 16.974, -9.701, 15.162, -12.902, 12.551, -15.424, 9.279)
+width = 4.0
+default_color = Color(0.5, 0.13, 0.34, 1.0)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Vine2" type="Line2D" parent="Visual"]
+points = PackedVector2Array(-11.602, -3.066, -10.333, -6.102, -8.288, -8.678, -5.62, -10.603, -2.53, -11.73, 0.751, -11.976, 3.975, -11.323, 6.9, -9.818, 9.307, -7.575)
+width = 3.0
+default_color = Color(0.5, 0.13, 0.34, 1.0)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Berry0" type="Polygon2D" parent="Visual"]
+color = Color(0.95, 0.22, 0.38, 1.0)
+polygon = PackedVector2Array(-5.0, -7.0, -5.536, -5.0, -7.0, -3.536, -9.0, -3.0, -11.0, -3.536, -12.464, -5.0, -13.0, -7.0, -12.464, -9.0, -11.0, -10.464, -9.0, -11.0, -7.0, -10.464, -5.536, -9.0)
+antialiased = true
+
+[node name="Berry1" type="Polygon2D" parent="Visual"]
+color = Color(0.95, 0.22, 0.38, 1.0)
+polygon = PackedVector2Array(15.0, 8.0, 14.464, 10.0, 13.0, 11.464, 11.0, 12.0, 9.0, 11.464, 7.536, 10.0, 7.0, 8.0, 7.536, 6.0, 9.0, 4.536, 11.0, 4.0, 13.0, 4.536, 14.464, 6.0)
+antialiased = true
+
+[node name="Berry2" type="Polygon2D" parent="Visual"]
+color = Color(0.95, 0.22, 0.38, 1.0)
+polygon = PackedVector2Array(8.0, -15.0, 7.464, -13.0, 6.0, -11.536, 4.0, -11.0, 2.0, -11.536, 0.536, -13.0, 0.0, -15.0, 0.536, -17.0, 2.0, -18.464, 4.0, -19.0, 6.0, -18.464, 7.464, -17.0)
+antialiased = true

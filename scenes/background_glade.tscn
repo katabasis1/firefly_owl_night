@@ -1,0 +1,309 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/background.gd" id="1_r"]
+[ext_resource type="Shader" path="res://shaders/sky.gdshader" id="2_r"]
+[ext_resource type="Texture2D" path="res://art/glow.tres" id="3_r"]
+[ext_resource type="Material" path="res://art/add.tres" id="4_r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1"]
+shader = ExtResource("2_r")
+shader_parameter/top_color = Color(0.05, 0.02, 0.11, 1.0)
+shader_parameter/mid_color = Color(0.22, 0.06, 0.27, 1.0)
+shader_parameter/bottom_color = Color(0.13, 0.05, 0.22, 1.0)
+shader_parameter/aurora_color = Color(0.95, 0.45, 0.9, 1.0)
+
+[sub_resource type="Gradient" id="Gradient_2"]
+offsets = PackedFloat32Array(0.0, 0.5, 1.0)
+colors = PackedColorArray(1.0, 0.6, 1.0, 0.0, 1.0, 0.7, 1.0, 0.85, 1.0, 0.6, 1.0, 0.0)
+
+[sub_resource type="Gradient" id="Gradient_3"]
+offsets = PackedFloat32Array(0.0, 0.25, 0.5, 0.75, 1.0)
+colors = PackedColorArray(0.7, 1.0, 0.5, 0.0, 0.8, 1.0, 0.5, 0.9, 0.7, 1.0, 0.5, 0.1, 0.8, 1.0, 0.5, 0.9, 0.7, 1.0, 0.5, 0.0)
+
+[node name="Background" type="Node2D"]
+script = ExtResource("1_r")
+z_index = -10
+
+[node name="Sky" type="ColorRect" parent="."]
+offset_right = 720.0
+offset_bottom = 1280.0
+mouse_filter = 2
+material = SubResource("ShaderMaterial_1")
+
+[node name="MoonGlow" type="Sprite2D" parent="."]
+modulate = Color(1.0, 0.7, 1.0, 0.3)
+position = Vector2(175.0, 64.0)
+scale = Vector2(3.2, 3.2)
+texture = ExtResource("3_r")
+material = ExtResource("4_r")
+
+[node name="Moon" type="Node2D" parent="."]
+position = Vector2(175.0, 64.0)
+scale = Vector2(0.55, 0.55)
+modulate = Color(1.0, 1.0, 1.0, 0.75)
+
+[node name="Disc" type="Polygon2D" parent="Moon"]
+color = Color(1.0, 0.9, 0.98, 1.0)
+polygon = PackedVector2Array(52.0, 0.0, 51.555, 6.787, 50.228, 13.459, 48.042, 19.9, 45.033, 26.0, 41.254, 31.656, 36.77, 36.77, 31.656, 41.254, 26.0, 45.033, 19.9, 48.042, 13.459, 50.228, 6.787, 51.555, 0.0, 52.0, -6.787, 51.555, -13.459, 50.228, -19.9, 48.042, -26.0, 45.033, -31.656, 41.254, -36.77, 36.77, -41.254, 31.656, -45.033, 26.0, -48.042, 19.9, -50.228, 13.459, -51.555, 6.787, -52.0, 0.0, -51.555, -6.787, -50.228, -13.459, -48.042, -19.9, -45.033, -26.0, -41.254, -31.656, -36.77, -36.77, -31.656, -41.254, -26.0, -45.033, -19.9, -48.042, -13.459, -50.228, -6.787, -51.555, 0.0, -52.0, 6.787, -51.555, 13.459, -50.228, 19.9, -48.042, 26.0, -45.033, 31.656, -41.254, 36.77, -36.77, 41.254, -31.656, 45.033, -26.0, 48.042, -19.9, 50.228, -13.459, 51.555, -6.787)
+antialiased = true
+
+[node name="Crater0" type="Polygon2D" parent="Moon"]
+color = Color(0.85, 0.85, 0.78, 1.0)
+polygon = PackedVector2Array(-5.0, -10.0, -5.761, -6.173, -7.929, -2.929, -11.173, -0.761, -15.0, 0.0, -18.827, -0.761, -22.071, -2.929, -24.239, -6.173, -25.0, -10.0, -24.239, -13.827, -22.071, -17.071, -18.827, -19.239, -15.0, -20.0, -11.173, -19.239, -7.929, -17.071, -5.761, -13.827)
+antialiased = true
+
+[node name="Crater1" type="Polygon2D" parent="Moon"]
+color = Color(0.85, 0.85, 0.78, 1.0)
+polygon = PackedVector2Array(25.0, 12.0, 24.467, 14.679, 22.95, 16.95, 20.679, 18.467, 18.0, 19.0, 15.321, 18.467, 13.05, 16.95, 11.533, 14.679, 11.0, 12.0, 11.533, 9.321, 13.05, 7.05, 15.321, 5.533, 18.0, 5.0, 20.679, 5.533, 22.95, 7.05, 24.467, 9.321)
+antialiased = true
+
+[node name="Crater2" type="Polygon2D" parent="Moon"]
+color = Color(0.85, 0.85, 0.78, 1.0)
+polygon = PackedVector2Array(10.0, -26.0, 9.619, -24.087, 8.536, -22.464, 6.913, -21.381, 5.0, -21.0, 3.087, -21.381, 1.464, -22.464, 0.381, -24.087, 0.0, -26.0, 0.381, -27.913, 1.464, -29.536, 3.087, -30.619, 5.0, -31.0, 6.913, -30.619, 8.536, -29.536, 9.619, -27.913)
+antialiased = true
+
+[node name="Crater3" type="Polygon2D" parent="Moon"]
+color = Color(0.85, 0.85, 0.78, 1.0)
+polygon = PackedVector2Array(-14.0, 20.0, -14.457, 22.296, -15.757, 24.243, -17.704, 25.543, -20.0, 26.0, -22.296, 25.543, -24.243, 24.243, -25.543, 22.296, -26.0, 20.0, -25.543, 17.704, -24.243, 15.757, -22.296, 14.457, -20.0, 14.0, -17.704, 14.457, -15.757, 15.757, -14.457, 17.704)
+antialiased = true
+
+[node name="FarHills" type="Polygon2D" parent="."]
+color = Color(0.12, 0.06, 0.2, 1.0)
+polygon = PackedVector2Array(0.0, 1280.0, 0.0, 1010.0, 0.0, 1018.963, 20.0, 1004.881, 40.0, 995.524, 60.0, 991.069, 80.0, 990.91, 100.0, 993.809, 120.0, 998.152, 140.0, 1002.276, 160.0, 1004.786, 180.0, 1004.829, 200.0, 1002.253, 220.0, 997.644, 240.0, 992.214, 260.0, 987.574, 280.0, 985.427, 300.0, 987.24, 320.0, 993.946, 340.0, 1005.743, 360.0, 1022.013, 380.0, 1041.393, 400.0, 1061.965, 420.0, 1081.556, 440.0, 1098.08, 460.0, 1109.868, 480.0, 1115.922, 500.0, 1116.068, 520.0, 1110.954, 540.0, 1101.915, 560.0, 1090.723, 580.0, 1079.265, 600.0, 1069.213, 620.0, 1061.732, 640.0, 1057.295, 660.0, 1055.622, 680.0, 1055.765, 700.0, 1056.313, 720.0, 1055.685, 720.0, 1280.0)
+antialiased = true
+
+[node name="FarStem0" type="Polygon2D" parent="."]
+color = Color(0.1, 0.05, 0.17, 1.0)
+polygon = PackedVector2Array(136.0, 1360.0, 138.0, 880.0, 162.0, 880.0, 164.0, 1360.0)
+antialiased = true
+
+[node name="FarCap0" type="Polygon2D" parent="."]
+color = Color(0.13, 0.06, 0.22, 1.0)
+polygon = PackedVector2Array(80.0, 860.0, 80.599, 854.975, 82.385, 850.035, 85.328, 845.267, 89.378, 840.75, 94.465, 836.563, 100.503, 832.776, 107.387, 829.456, 115.0, 826.658, 123.212, 824.431, 131.883, 822.812, 140.863, 821.829, 150.0, 821.5, 159.137, 821.829, 168.117, 822.812, 176.788, 824.431, 185.0, 826.658, 192.613, 829.456, 199.497, 832.776, 205.535, 836.563, 210.622, 840.75, 214.672, 845.267, 217.615, 850.035, 219.401, 854.975, 220.0, 860.0)
+antialiased = true
+
+[node name="FarStem1" type="Polygon2D" parent="."]
+color = Color(0.1, 0.05, 0.17, 1.0)
+polygon = PackedVector2Array(306.0, 1380.0, 308.0, 950.0, 332.0, 950.0, 334.0, 1380.0)
+antialiased = true
+
+[node name="FarCap1" type="Polygon2D" parent="."]
+color = Color(0.13, 0.06, 0.22, 1.0)
+polygon = PackedVector2Array(270.0, 930.0, 270.428, 926.411, 271.704, 922.882, 273.806, 919.476, 276.699, 916.25, 280.332, 913.259, 284.645, 910.555, 289.562, 908.183, 295.0, 906.184, 300.866, 904.593, 307.059, 903.437, 313.474, 902.735, 320.0, 902.5, 326.526, 902.735, 332.941, 903.437, 339.134, 904.593, 345.0, 906.184, 350.438, 908.183, 355.355, 910.555, 359.668, 913.259, 363.301, 916.25, 366.194, 919.476, 368.296, 922.882, 369.572, 926.411, 370.0, 930.0)
+antialiased = true
+
+[node name="FarStem2" type="Polygon2D" parent="."]
+color = Color(0.1, 0.05, 0.17, 1.0)
+polygon = PackedVector2Array(466.0, 1350.0, 468.0, 840.0, 492.0, 840.0, 494.0, 1350.0)
+antialiased = true
+
+[node name="FarCap2" type="Polygon2D" parent="."]
+color = Color(0.13, 0.06, 0.22, 1.0)
+polygon = PackedVector2Array(400.0, 820.0, 400.684, 814.257, 402.726, 808.612, 406.09, 803.162, 410.718, 798.0, 416.532, 793.214, 423.431, 788.887, 431.299, 785.092, 440.0, 781.895, 449.385, 779.349, 459.294, 777.499, 469.558, 776.376, 480.0, 776.0, 490.442, 776.376, 500.706, 777.499, 510.615, 779.349, 520.0, 781.895, 528.701, 785.092, 536.569, 788.887, 543.468, 793.214, 549.282, 798.0, 553.91, 803.162, 557.274, 808.612, 559.316, 814.257, 560.0, 820.0)
+antialiased = true
+
+[node name="FarStem3" type="Polygon2D" parent="."]
+color = Color(0.1, 0.05, 0.17, 1.0)
+polygon = PackedVector2Array(616.0, 1370.0, 618.0, 930.0, 642.0, 930.0, 644.0, 1370.0)
+antialiased = true
+
+[node name="FarCap3" type="Polygon2D" parent="."]
+color = Color(0.13, 0.06, 0.22, 1.0)
+polygon = PackedVector2Array(575.0, 910.0, 575.471, 906.052, 576.874, 902.171, 579.187, 898.424, 582.369, 894.875, 586.366, 891.585, 591.109, 888.61, 596.518, 886.001, 602.5, 883.803, 608.952, 882.053, 615.765, 880.781, 622.821, 880.009, 630.0, 879.75, 637.179, 880.009, 644.235, 880.781, 651.048, 882.053, 657.5, 883.803, 663.482, 886.001, 668.891, 888.61, 673.634, 891.585, 677.631, 894.875, 680.813, 898.424, 683.126, 902.171, 684.529, 906.052, 685.0, 910.0)
+antialiased = true
+
+[node name="Fog2" type="Sprite2D" parent="."]
+modulate = Color(1.0, 0.6, 1.0, 0.08)
+position = Vector2(360.0, 700.0)
+scale = Vector2(10.0, 1.6)
+texture = ExtResource("3_r")
+material = ExtResource("4_r")
+
+[node name="SideStem0" type="Polygon2D" parent="."]
+color = Color(0.06, 0.02, 0.09, 1.0)
+polygon = PackedVector2Array(-6.4, 1520.0, -1.2, 620.0, 61.2, 620.0, 66.4, 1520.0)
+antialiased = true
+
+[node name="SideCap0" type="Polygon2D" parent="."]
+color = Color(0.1, 0.03, 0.15, 1.0)
+polygon = PackedVector2Array(-100.0, 600.0, -98.888, 590.667, -95.57, 581.494, -90.104, 572.638, -82.583, 564.25, -73.136, 556.474, -61.924, 549.442, -49.139, 543.275, -35.0, 538.079, -19.749, 533.943, -3.646, 530.936, 13.032, 529.112, 30.0, 528.5, 46.968, 529.112, 63.646, 530.936, 79.749, 533.943, 95.0, 538.079, 109.139, 543.275, 121.924, 549.442, 133.136, 556.474, 142.583, 564.25, 150.104, 572.638, 155.57, 581.494, 158.888, 590.667, 160.0, 600.0)
+antialiased = true
+
+[node name="CapGlow0_0" type="Sprite2D" parent="."]
+modulate = Color(1.0, 0.5, 0.95, 0.55)
+position = Vector2(-6.643, 554.864)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_r")
+material = ExtResource("4_r")
+
+[node name="CapSpot0_0" type="Polygon2D" parent="."]
+color = Color(1.0, 0.7, 1.0, 0.8)
+polygon = PackedVector2Array(-0.643, 554.864, -1.447, 557.864, -3.643, 560.06, -6.643, 560.864, -9.643, 560.06, -11.839, 557.864, -12.643, 554.864, -11.839, 551.864, -9.643, 549.667, -6.643, 548.864, -3.643, 549.667, -1.447, 551.864)
+antialiased = true
+
+[node name="CapGlow0_1" type="Sprite2D" parent="."]
+modulate = Color(1.0, 0.5, 0.95, 0.55)
+position = Vector2(61.394, 551.296)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_r")
+material = ExtResource("4_r")
+
+[node name="CapSpot0_1" type="Polygon2D" parent="."]
+color = Color(1.0, 0.7, 1.0, 0.8)
+polygon = PackedVector2Array(67.394, 551.296, 66.591, 554.296, 64.394, 556.492, 61.394, 557.296, 58.394, 556.492, 56.198, 554.296, 55.394, 551.296, 56.198, 548.296, 58.394, 546.1, 61.394, 545.296, 64.394, 546.1, 66.591, 548.296)
+antialiased = true
+
+[node name="CapGlow0_2" type="Sprite2D" parent="."]
+modulate = Color(1.0, 0.5, 0.95, 0.55)
+position = Vector2(37.463, 564.639)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_r")
+material = ExtResource("4_r")
+
+[node name="CapSpot0_2" type="Polygon2D" parent="."]
+color = Color(1.0, 0.7, 1.0, 0.8)
+polygon = PackedVector2Array(43.463, 564.639, 42.66, 567.639, 40.463, 569.835, 37.463, 570.639, 34.463, 569.835, 32.267, 567.639, 31.463, 564.639, 32.267, 561.639, 34.463, 559.443, 37.463, 558.639, 40.463, 559.443, 42.66, 561.639)
+antialiased = true
+
+[node name="CapGlow0_3" type="Sprite2D" parent="."]
+modulate = Color(1.0, 0.5, 0.95, 0.55)
+position = Vector2(-61.936, 571.088)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_r")
+material = ExtResource("4_r")
+
+[node name="CapSpot0_3" type="Polygon2D" parent="."]
+color = Color(1.0, 0.7, 1.0, 0.8)
+polygon = PackedVector2Array(-55.936, 571.088, -56.74, 574.088, -58.936, 576.284, -61.936, 577.088, -64.936, 576.284, -67.132, 574.088, -67.936, 571.088, -67.132, 568.088, -64.936, 565.892, -61.936, 565.088, -58.936, 565.892, -56.74, 568.088)
+antialiased = true
+
+[node name="CapGlow0_4" type="Sprite2D" parent="."]
+modulate = Color(1.0, 0.5, 0.95, 0.55)
+position = Vector2(-66.201, 567.731)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_r")
+material = ExtResource("4_r")
+
+[node name="CapSpot0_4" type="Polygon2D" parent="."]
+color = Color(1.0, 0.7, 1.0, 0.8)
+polygon = PackedVector2Array(-60.201, 567.731, -61.005, 570.731, -63.201, 572.927, -66.201, 573.731, -69.201, 572.927, -71.397, 570.731, -72.201, 567.731, -71.397, 564.731, -69.201, 562.535, -66.201, 561.731, -63.201, 562.535, -61.005, 564.731)
+antialiased = true
+
+[node name="SideStem1" type="Polygon2D" parent="."]
+color = Color(0.06, 0.02, 0.09, 1.0)
+polygon = PackedVector2Array(663.6, 1510.0, 668.8, 530.0, 731.2, 530.0, 736.4, 1510.0)
+antialiased = true
+
+[node name="SideCap1" type="Polygon2D" parent="."]
+color = Color(0.1, 0.03, 0.15, 1.0)
+polygon = PackedVector2Array(560.0, 510.0, 561.198, 499.949, 564.77, 490.071, 570.657, 480.533, 578.756, 471.5, 588.931, 463.125, 601.005, 455.553, 614.773, 448.912, 630.0, 443.316, 646.424, 438.861, 663.765, 435.624, 681.726, 433.659, 700.0, 433.0, 718.274, 433.659, 736.235, 435.624, 753.576, 438.861, 770.0, 443.316, 785.227, 448.912, 798.995, 455.553, 811.069, 463.125, 821.244, 471.5, 829.343, 480.533, 835.23, 490.071, 838.802, 499.949, 840.0, 510.0)
+antialiased = true
+
+[node name="CapGlow1_0" type="Sprite2D" parent="."]
+modulate = Color(1.0, 0.5, 0.95, 0.55)
+position = Vector2(603.648, 458.445)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_r")
+material = ExtResource("4_r")
+
+[node name="CapSpot1_0" type="Polygon2D" parent="."]
+color = Color(1.0, 0.7, 1.0, 0.8)
+polygon = PackedVector2Array(609.648, 458.445, 608.844, 461.445, 606.648, 463.641, 603.648, 464.445, 600.648, 463.641, 598.451, 461.445, 597.648, 458.445, 598.451, 455.445, 600.648, 453.249, 603.648, 452.445, 606.648, 453.249, 608.844, 455.445)
+antialiased = true
+
+[node name="CapGlow1_1" type="Sprite2D" parent="."]
+modulate = Color(1.0, 0.5, 0.95, 0.55)
+position = Vector2(683.092, 494.516)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_r")
+material = ExtResource("4_r")
+
+[node name="CapSpot1_1" type="Polygon2D" parent="."]
+color = Color(1.0, 0.7, 1.0, 0.8)
+polygon = PackedVector2Array(689.092, 494.516, 688.288, 497.516, 686.092, 499.712, 683.092, 500.516, 680.092, 499.712, 677.896, 497.516, 677.092, 494.516, 677.896, 491.516, 680.092, 489.32, 683.092, 488.516, 686.092, 489.32, 688.288, 491.516)
+antialiased = true
+
+[node name="CapGlow1_2" type="Sprite2D" parent="."]
+modulate = Color(1.0, 0.5, 0.95, 0.55)
+position = Vector2(615.732, 464.939)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_r")
+material = ExtResource("4_r")
+
+[node name="CapSpot1_2" type="Polygon2D" parent="."]
+color = Color(1.0, 0.7, 1.0, 0.8)
+polygon = PackedVector2Array(621.732, 464.939, 620.928, 467.939, 618.732, 470.135, 615.732, 470.939, 612.732, 470.135, 610.535, 467.939, 609.732, 464.939, 610.535, 461.939, 612.732, 459.743, 615.732, 458.939, 618.732, 459.743, 620.928, 461.939)
+antialiased = true
+
+[node name="CapGlow1_3" type="Sprite2D" parent="."]
+modulate = Color(1.0, 0.5, 0.95, 0.55)
+position = Vector2(728.545, 500.438)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_r")
+material = ExtResource("4_r")
+
+[node name="CapSpot1_3" type="Polygon2D" parent="."]
+color = Color(1.0, 0.7, 1.0, 0.8)
+polygon = PackedVector2Array(734.545, 500.438, 733.741, 503.438, 731.545, 505.634, 728.545, 506.438, 725.545, 505.634, 723.349, 503.438, 722.545, 500.438, 723.349, 497.438, 725.545, 495.242, 728.545, 494.438, 731.545, 495.242, 733.741, 497.438)
+antialiased = true
+
+[node name="CapGlow1_4" type="Sprite2D" parent="."]
+modulate = Color(1.0, 0.5, 0.95, 0.55)
+position = Vector2(717.271, 473.437)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_r")
+material = ExtResource("4_r")
+
+[node name="CapSpot1_4" type="Polygon2D" parent="."]
+color = Color(1.0, 0.7, 1.0, 0.8)
+polygon = PackedVector2Array(723.271, 473.437, 722.467, 476.437, 720.271, 478.633, 717.271, 479.437, 714.271, 478.633, 712.075, 476.437, 711.271, 473.437, 712.075, 470.437, 714.271, 468.241, 717.271, 467.437, 720.271, 468.241, 722.467, 470.437)
+antialiased = true
+
+[node name="Grass" type="Polygon2D" parent="."]
+color = Color(0.07, 0.03, 0.1, 1.0)
+polygon = PackedVector2Array(0.0, 1280.0, 0.0, 1244.142, 6.0, 1235.068, 12.0, 1244.849, 18.0, 1230.208, 24.0, 1249.134, 30.0, 1233.644, 36.0, 1248.149, 42.0, 1219.677, 48.0, 1248.916, 54.0, 1224.368, 60.0, 1246.167, 66.0, 1228.552, 72.0, 1246.714, 78.0, 1234.744, 84.0, 1249.642, 90.0, 1231.881, 96.0, 1245.918, 102.0, 1227.448, 108.0, 1248.115, 114.0, 1224.289, 120.0, 1247.281, 126.0, 1230.005, 132.0, 1245.234, 138.0, 1222.02, 144.0, 1248.535, 150.0, 1224.512, 156.0, 1246.849, 162.0, 1218.497, 168.0, 1245.623, 174.0, 1230.241, 180.0, 1244.119, 186.0, 1233.639, 192.0, 1247.491, 198.0, 1220.857, 204.0, 1249.088, 210.0, 1226.221, 216.0, 1249.765, 222.0, 1222.636, 228.0, 1245.413, 234.0, 1224.539, 240.0, 1244.747, 246.0, 1229.725, 252.0, 1245.828, 258.0, 1224.113, 264.0, 1246.521, 270.0, 1226.876, 276.0, 1244.96, 282.0, 1217.106, 288.0, 1247.155, 294.0, 1222.717, 300.0, 1249.636, 306.0, 1221.97, 312.0, 1246.117, 318.0, 1216.138, 324.0, 1245.068, 330.0, 1230.308, 336.0, 1247.685, 342.0, 1222.627, 348.0, 1249.865, 354.0, 1226.766, 360.0, 1248.992, 366.0, 1233.658, 372.0, 1249.646, 378.0, 1220.635, 384.0, 1249.224, 390.0, 1231.048, 396.0, 1247.654, 402.0, 1218.572, 408.0, 1249.517, 414.0, 1227.016, 420.0, 1246.703, 426.0, 1218.332, 432.0, 1245.084, 438.0, 1218.72, 444.0, 1248.329, 450.0, 1227.694, 456.0, 1247.847, 462.0, 1218.316, 468.0, 1244.254, 474.0, 1232.982, 480.0, 1248.943, 486.0, 1231.361, 492.0, 1248.6, 498.0, 1226.301, 504.0, 1246.465, 510.0, 1230.745, 516.0, 1249.975, 522.0, 1227.621, 528.0, 1247.784, 534.0, 1224.673, 540.0, 1244.281, 546.0, 1222.19, 552.0, 1246.907, 558.0, 1223.648, 564.0, 1245.943, 570.0, 1234.92, 576.0, 1244.603, 582.0, 1220.401, 588.0, 1244.753, 594.0, 1220.043, 600.0, 1247.646, 606.0, 1228.02, 612.0, 1249.379, 618.0, 1223.314, 624.0, 1249.627, 630.0, 1234.653, 636.0, 1248.747, 642.0, 1232.754, 648.0, 1247.96, 654.0, 1234.948, 660.0, 1249.999, 666.0, 1232.975, 672.0, 1249.391, 678.0, 1228.728, 684.0, 1249.847, 690.0, 1218.513, 696.0, 1246.316, 702.0, 1233.029, 708.0, 1248.486, 714.0, 1229.052, 720.0, 1247.815, 726.0, 1233.543, 720.0, 1250.0, 720.0, 1280.0)
+antialiased = true
+
+[node name="Fog1" type="Sprite2D" parent="."]
+modulate = Color(1.0, 0.65, 1.0, 0.12)
+position = Vector2(360.0, 1040.0)
+scale = Vector2(9.0, 2.2)
+texture = ExtResource("3_r")
+material = ExtResource("4_r")
+
+[node name="Pollen" type="CPUParticles2D" parent="."]
+emitting = true
+texture = ExtResource("3_r")
+material = ExtResource("4_r")
+position = Vector2(360.0, 640.0)
+amount = 40
+lifetime = 9.0
+preprocess = 9.0
+emission_shape = 3
+emission_rect_extents = Vector2(380.0, 660.0)
+direction = Vector2(0.0, -1.0)
+spread = 70.0
+gravity = Vector2(0.0, -3.0)
+initial_velocity_min = 6.0
+initial_velocity_max = 22.0
+scale_amount_min = 0.03
+scale_amount_max = 0.09
+color_ramp = SubResource("Gradient_2")
+
+[node name="Fireflies" type="CPUParticles2D" parent="."]
+emitting = true
+texture = ExtResource("3_r")
+material = ExtResource("4_r")
+position = Vector2(360.0, 900.0)
+amount = 14
+lifetime = 6.0
+preprocess = 6.0
+emission_shape = 3
+emission_rect_extents = Vector2(360.0, 300.0)
+spread = 180.0
+gravity = Vector2(0.0, 0.0)
+initial_velocity_min = 5.0
+initial_velocity_max = 20.0
+scale_amount_min = 0.08
+scale_amount_max = 0.16
+color_ramp = SubResource("Gradient_3")

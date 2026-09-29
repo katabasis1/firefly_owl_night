@@ -1,0 +1,194 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/web.gd" id="1_r"]
+[ext_resource type="Texture2D" path="res://art/glow.tres" id="2_r"]
+[ext_resource type="Material" path="res://art/add.tres" id="3_r"]
+
+[node name="Web" type="Node2D"]
+script = ExtResource("1_r")
+
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="Zone" type="Polygon2D" parent="Visual"]
+color = Color(0.75, 0.85, 1.0, 0.07)
+polygon = PackedVector2Array(100.0, 0.0, 98.769, 15.643, 95.106, 30.902, 89.101, 45.399, 80.902, 58.779, 70.711, 70.711, 58.779, 80.902, 45.399, 89.101, 30.902, 95.106, 15.643, 98.769, 0.0, 100.0, -15.643, 98.769, -30.902, 95.106, -45.399, 89.101, -58.779, 80.902, -70.711, 70.711, -80.902, 58.779, -89.101, 45.399, -95.106, 30.902, -98.769, 15.643, -100.0, 0.0, -98.769, -15.643, -95.106, -30.902, -89.101, -45.399, -80.902, -58.779, -70.711, -70.711, -58.779, -80.902, -45.399, -89.101, -30.902, -95.106, -15.643, -98.769, 0.0, -100.0, 15.643, -98.769, 30.902, -95.106, 45.399, -89.101, 58.779, -80.902, 70.711, -70.711, 80.902, -58.779, 89.101, -45.399, 95.106, -30.902, 98.769, -15.643)
+antialiased = true
+
+[node name="Spoke0" type="Line2D" parent="Visual"]
+points = PackedVector2Array(0.0, 0.0, 103.252, 12.45)
+width = 2.0
+default_color = Color(0.88, 0.93, 1.0, 0.45)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Spoke1" type="Line2D" parent="Visual"]
+points = PackedVector2Array(0.0, 0.0, 76.215, 70.762)
+width = 2.0
+default_color = Color(0.88, 0.93, 1.0, 0.45)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Spoke2" type="Line2D" parent="Visual"]
+points = PackedVector2Array(0.0, 0.0, 20.066, 102.046)
+width = 2.0
+default_color = Color(0.88, 0.93, 1.0, 0.45)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Spoke3" type="Line2D" parent="Visual"]
+points = PackedVector2Array(0.0, 0.0, -43.747, 94.351)
+width = 2.0
+default_color = Color(0.88, 0.93, 1.0, 0.45)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Spoke4" type="Line2D" parent="Visual"]
+points = PackedVector2Array(0.0, 0.0, -90.851, 50.618)
+width = 2.0
+default_color = Color(0.88, 0.93, 1.0, 0.45)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Spoke5" type="Line2D" parent="Visual"]
+points = PackedVector2Array(0.0, 0.0, -103.252, -12.45)
+width = 2.0
+default_color = Color(0.88, 0.93, 1.0, 0.45)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Spoke6" type="Line2D" parent="Visual"]
+points = PackedVector2Array(0.0, 0.0, -76.215, -70.762)
+width = 2.0
+default_color = Color(0.88, 0.93, 1.0, 0.45)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Spoke7" type="Line2D" parent="Visual"]
+points = PackedVector2Array(0.0, 0.0, -20.066, -102.046)
+width = 2.0
+default_color = Color(0.88, 0.93, 1.0, 0.45)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Spoke8" type="Line2D" parent="Visual"]
+points = PackedVector2Array(0.0, 0.0, 43.747, -94.351)
+width = 2.0
+default_color = Color(0.88, 0.93, 1.0, 0.45)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Spoke9" type="Line2D" parent="Visual"]
+points = PackedVector2Array(0.0, 0.0, 90.851, -50.618)
+width = 2.0
+default_color = Color(0.88, 0.93, 1.0, 0.45)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Ring0" type="Line2D" parent="Visual"]
+points = PackedVector2Array(17.265, 2.082, 16.292, 4.633, 15.521, 7.197, 14.779, 9.922, 12.744, 11.832, 10.457, 13.325, 8.327, 14.945, 6.125, 16.714, 3.355, 17.063, 0.628, 16.927, -2.048, 16.986, -4.869, 17.122, -7.315, 15.777, -9.441, 14.063, -11.641, 12.538, -14.003, 10.99, -15.191, 8.464, -15.904, 5.828, -16.787, 3.301, -17.789, 0.66, -17.265, -2.082, -16.292, -4.633, -15.521, -7.197, -14.779, -9.922, -12.744, -11.832, -10.457, -13.325, -8.327, -14.945, -6.125, -16.714, -3.355, -17.063, -0.628, -16.927, 2.048, -16.986, 4.869, -17.122, 7.315, -15.777, 9.441, -14.063, 11.641, -12.538, 14.003, -10.99, 15.191, -8.464, 15.904, -5.828, 16.787, -3.301, 17.789, -0.66, 17.265, 2.082)
+width = 1.6
+default_color = Color(0.88, 0.93, 1.0, 0.35)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Ring1" type="Line2D" parent="Visual"]
+points = PackedVector2Array(32.612, 3.932, 30.775, 8.752, 29.318, 13.594, 27.916, 18.742, 24.072, 22.35, 19.753, 25.17, 15.729, 28.23, 11.569, 31.571, 6.338, 32.231, 1.186, 31.973, -3.869, 32.084, -9.198, 32.341, -13.817, 29.801, -17.834, 26.564, -21.988, 23.682, -26.451, 20.758, -28.695, 15.987, -30.042, 11.008, -31.709, 6.235, -33.601, 1.246, -32.612, -3.932, -30.775, -8.752, -29.318, -13.594, -27.916, -18.742, -24.072, -22.35, -19.753, -25.17, -15.729, -28.23, -11.569, -31.571, -6.338, -32.231, -1.186, -31.973, 3.869, -32.084, 9.198, -32.341, 13.817, -29.801, 17.834, -26.564, 21.988, -23.682, 26.451, -20.758, 28.695, -15.987, 30.042, -11.008, 31.709, -6.235, 33.601, -1.246, 32.612, 3.932)
+width = 1.6
+default_color = Color(0.88, 0.93, 1.0, 0.35)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Ring2" type="Line2D" parent="Visual"]
+points = PackedVector2Array(47.959, 5.783, 45.257, 12.871, 43.115, 19.991, 41.053, 27.561, 35.4, 32.868, 29.048, 37.014, 23.13, 41.515, 17.013, 46.428, 9.32, 47.398, 1.744, 47.019, -5.689, 47.182, -13.526, 47.561, -20.32, 43.824, -26.226, 39.064, -32.336, 34.827, -38.899, 30.527, -42.198, 23.511, -44.179, 16.189, -46.631, 9.169, -49.413, 1.833, -47.959, -5.783, -45.257, -12.871, -43.115, -19.991, -41.053, -27.561, -35.4, -32.868, -29.048, -37.014, -23.13, -41.515, -17.013, -46.428, -9.32, -47.398, -1.744, -47.019, 5.689, -47.182, 13.526, -47.561, 20.32, -43.824, 26.226, -39.064, 32.336, -34.827, 38.899, -30.527, 42.198, -23.511, 44.179, -16.189, 46.631, -9.169, 49.413, -1.833, 47.959, 5.783)
+width = 1.6
+default_color = Color(0.88, 0.93, 1.0, 0.35)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Ring3" type="Line2D" parent="Visual"]
+points = PackedVector2Array(63.305, 7.633, 59.739, 16.989, 56.912, 26.388, 54.19, 36.381, 46.728, 43.386, 38.344, 48.858, 30.532, 54.8, 22.457, 61.285, 12.303, 62.566, 2.302, 62.065, -7.51, 62.281, -17.854, 62.781, -26.822, 57.848, -34.618, 51.565, -42.683, 45.972, -51.346, 40.296, -55.702, 31.035, -58.316, 21.369, -61.553, 12.104, -65.225, 2.42, -63.305, -7.633, -59.739, -16.989, -56.912, -26.388, -54.19, -36.381, -46.728, -43.386, -38.344, -48.858, -30.532, -54.8, -22.457, -61.285, -12.303, -62.566, -2.302, -62.065, 7.51, -62.281, 17.854, -62.781, 26.822, -57.848, 34.618, -51.565, 42.683, -45.972, 51.346, -40.296, 55.702, -31.035, 58.316, -21.369, 61.553, -12.104, 65.225, -2.42, 63.305, 7.633)
+width = 1.6
+default_color = Color(0.88, 0.93, 1.0, 0.35)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Ring4" type="Line2D" parent="Visual"]
+points = PackedVector2Array(78.652, 9.484, 74.221, 21.108, 70.708, 32.785, 67.328, 45.2, 58.057, 53.903, 47.639, 60.703, 37.934, 68.085, 27.901, 76.142, 15.285, 77.733, 2.861, 77.111, -9.33, 77.379, -22.183, 78.0, -33.325, 71.872, -43.011, 64.066, -53.031, 57.117, -63.794, 50.065, -69.205, 38.558, -72.453, 26.549, -76.475, 15.038, -81.037, 3.006, -78.652, -9.484, -74.221, -21.108, -70.708, -32.785, -67.328, -45.2, -58.057, -53.903, -47.639, -60.703, -37.934, -68.085, -27.901, -76.142, -15.285, -77.733, -2.861, -77.111, 9.33, -77.379, 22.183, -78.0, 33.325, -71.872, 43.011, -64.066, 53.031, -57.117, 63.794, -50.065, 69.205, -38.558, 72.453, -26.549, 76.475, -15.038, 81.037, -3.006, 78.652, 9.484)
+width = 1.6
+default_color = Color(0.88, 0.93, 1.0, 0.35)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Ring5" type="Line2D" parent="Visual"]
+points = PackedVector2Array(93.999, 11.334, 88.703, 25.227, 84.505, 39.182, 80.465, 54.02, 69.385, 64.421, 56.935, 72.547, 45.336, 81.37, 33.345, 90.999, 18.268, 92.901, 3.419, 92.157, -11.151, 92.477, -26.511, 93.22, -39.827, 85.896, -51.403, 76.566, -63.378, 68.261, -76.241, 59.833, -82.709, 46.082, -86.59, 31.73, -91.397, 17.972, -96.849, 3.593, -93.999, -11.334, -88.703, -25.227, -84.505, -39.182, -80.465, -54.02, -69.385, -64.421, -56.935, -72.547, -45.336, -81.37, -33.345, -90.999, -18.268, -92.901, -3.419, -92.157, 11.151, -92.477, 26.511, -93.22, 39.827, -85.896, 51.403, -76.566, 63.378, -68.261, 76.241, -59.833, 82.709, -46.082, 86.59, -31.73, 91.397, -17.972, 96.849, -3.593, 93.999, 11.334)
+width = 1.6
+default_color = Color(0.88, 0.93, 1.0, 0.35)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Glint0" type="Sprite2D" parent="Visual"]
+modulate = Color(0.85, 0.95, 1.0, 0.8)
+position = Vector2(-52.551, -50.98)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_r")
+material = ExtResource("3_r")
+
+[node name="Glint1" type="Sprite2D" parent="Visual"]
+modulate = Color(0.85, 0.95, 1.0, 0.8)
+position = Vector2(23.956, -82.866)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_r")
+material = ExtResource("3_r")
+
+[node name="Glint2" type="Sprite2D" parent="Visual"]
+modulate = Color(0.85, 0.95, 1.0, 0.8)
+position = Vector2(-5.588, -84.767)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_r")
+material = ExtResource("3_r")
+
+[node name="Glint3" type="Sprite2D" parent="Visual"]
+modulate = Color(0.85, 0.95, 1.0, 0.8)
+position = Vector2(54.351, 10.011)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_r")
+material = ExtResource("3_r")
+
+[node name="Glint4" type="Sprite2D" parent="Visual"]
+modulate = Color(0.85, 0.95, 1.0, 0.8)
+position = Vector2(62.903, -23.598)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_r")
+material = ExtResource("3_r")

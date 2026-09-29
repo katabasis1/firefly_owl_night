@@ -1,0 +1,78 @@
+[gd_scene load_steps=14 format=3]
+
+[ext_resource type="Script" path="res://scripts/sfx.gd" id="1_r"]
+[ext_resource type="AudioStream" path="res://audio/music.ogg" id="2_r"]
+[ext_resource type="AudioStream" path="res://audio/tick.wav" id="3_r"]
+[ext_resource type="AudioStream" path="res://audio/pop.wav" id="4_r"]
+[ext_resource type="AudioStream" path="res://audio/dew.wav" id="5_r"]
+[ext_resource type="AudioStream" path="res://audio/alert.wav" id="6_r"]
+[ext_resource type="AudioStream" path="res://audio/whoosh.wav" id="7_r"]
+[ext_resource type="AudioStream" path="res://audio/rewind.wav" id="8_r"]
+[ext_resource type="AudioStream" path="res://audio/win.wav" id="9_r"]
+[ext_resource type="AudioStream" path="res://audio/fail.wav" id="10_r"]
+[ext_resource type="AudioStream" path="res://audio/star.wav" id="11_r"]
+[ext_resource type="AudioStream" path="res://audio/click.wav" id="12_r"]
+[ext_resource type="AudioStream" path="res://audio/rustle.wav" id="13_r"]
+
+[node name="Sfx" type="Node"]
+script = ExtResource("1_r")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_r")
+volume_db = -7.0
+max_polyphony = 1
+
+[node name="Tick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_r")
+volume_db = -14.0
+max_polyphony = 4
+
+[node name="Pop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_r")
+volume_db = -6.0
+max_polyphony = 3
+
+[node name="Dew" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_r")
+volume_db = -3.0
+max_polyphony = 3
+
+[node name="Alert" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_r")
+volume_db = -4.0
+max_polyphony = 1
+
+[node name="Whoosh" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_r")
+volume_db = -6.0
+max_polyphony = 1
+
+[node name="Rewind" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_r")
+volume_db = -7.0
+max_polyphony = 1
+
+[node name="Win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_r")
+volume_db = -2.0
+max_polyphony = 1
+
+[node name="Fail" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_r")
+volume_db = -3.0
+max_polyphony = 1
+
+[node name="Star" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_r")
+volume_db = -3.0
+max_polyphony = 3
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_r")
+volume_db = -8.0
+max_polyphony = 3
+
+[node name="Rustle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_r")
+volume_db = -6.0
+max_polyphony = 2

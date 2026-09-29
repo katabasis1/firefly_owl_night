@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/dew.gd" id="1_r"]
+[ext_resource type="Texture2D" path="res://art/glow.tres" id="2_r"]
+[ext_resource type="Material" path="res://art/add.tres" id="3_r"]
+[ext_resource type="FontFile" path="res://ui/NotoSans-Black.ttf" id="4_r"]
+
+[sub_resource type="Gradient" id="Gradient_1"]
+offsets = PackedFloat32Array(0.0, 1.0)
+colors = PackedColorArray(0.7, 0.97, 1.0, 1.0, 0.3, 0.7, 1.0, 0.0)
+
+[node name="Dew" type="Node2D"]
+script = ExtResource("1_r")
+
+[node name="Glow" type="Sprite2D" parent="."]
+modulate = Color(0.4, 0.85, 1.0, 0.6)
+position = Vector2(0.0, 0.0)
+scale = Vector2(0.95, 0.95)
+texture = ExtResource("2_r")
+material = ExtResource("3_r")
+
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="Drop" type="Polygon2D" parent="Visual"]
+color = Color(0.38, 0.82, 1.0, 1.0)
+polygon = PackedVector2Array(0.0, -24.0, 0.363, -23.635, 1.425, -22.553, 3.106, -20.785, 5.276, -18.385, 7.77, -15.427, 10.392, -12.0, 12.936, -8.208, 15.193, -4.168, 16.971, 0.0, 18.106, 4.168, 18.474, 8.208, 18.0, 12.0, 16.663, 15.427, 14.497, 18.385, 11.591, 20.785, 8.084, 22.553, 4.152, 23.635, 0.0, 24.0, -4.152, 23.635, -8.084, 22.553, -11.591, 20.785, -14.497, 18.385, -16.663, 15.427, -18.0, 12.0, -18.474, 8.208, -18.106, 4.168, -16.971, 0.0, -15.193, -4.168, -12.936, -8.208, -10.392, -12.0, -7.77, -15.427, -5.276, -18.385, -3.106, -20.785, -1.425, -22.553, -0.363, -23.635)
+antialiased = true
+
+[node name="Inner" type="Polygon2D" parent="Visual"]
+color = Color(0.62, 0.94, 1.0, 1.0)
+polygon = PackedVector2Array(0.0, -11.0, 0.287, -10.693, 1.12, -9.782, 2.419, -8.304, 4.059, -6.314, 5.879, -3.889, 7.699, -1.123, 9.333, 1.879, 10.607, 5.0, 11.372, 8.121, 11.523, 11.123, 10.999, 13.889, 9.799, 16.314, 7.975, 18.304, 5.63, 19.782, 2.912, 20.693, 0.0, 21.0, -2.912, 20.693, -5.63, 19.782, -7.975, 18.304, -9.799, 16.314, -10.999, 13.889, -11.523, 11.123, -11.372, 8.121, -10.607, 5.0, -9.333, 1.879, -7.699, -1.123, -5.879, -3.889, -4.059, -6.314, -2.419, -8.304, -1.12, -9.782, -0.287, -10.693)
+antialiased = true
+
+[node name="Shine" type="Polygon2D" parent="Visual"]
+color = Color(1.0, 1.0, 1.0, 0.9)
+polygon = PackedVector2Array(-3.609, 3.866, -4.696, 6.723, -6.24, 8.843, -7.934, 9.805, -9.443, 9.42, -10.468, 7.763, -10.807, 5.163, -10.391, 2.134, -9.304, -0.723, -7.76, -2.843, -6.066, -3.805, -4.557, -3.42, -3.532, -1.763, -3.193, 0.837)
+antialiased = true
+
+[node name="Burst" type="CPUParticles2D" parent="."]
+emitting = false
+texture = ExtResource("2_r")
+material = ExtResource("3_r")
+amount = 22
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0.0, 0.0)
+initial_velocity_min = 140.0
+initial_velocity_max = 300.0
+damping_min = 250.0
+damping_max = 350.0
+scale_amount_min = 0.06
+scale_amount_max = 0.18
+color_ramp = SubResource("Gradient_1")
+
+[node name="Plus" type="Label" parent="."]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 80.0
+offset_bottom = 50.0
+text = "+1"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 34
+theme_override_colors/font_color = Color(0.6, 0.95, 1.0, 1.0)
+theme_override_fonts/font = ExtResource("4_r")

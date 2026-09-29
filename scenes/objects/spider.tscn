@@ -1,0 +1,135 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/spider.gd" id="1_r"]
+[ext_resource type="Texture2D" path="res://art/glow.tres" id="2_r"]
+[ext_resource type="Material" path="res://art/add.tres" id="3_r"]
+
+[node name="Spider" type="Node2D"]
+script = ExtResource("1_r")
+
+[node name="Thread" type="Line2D" parent="."]
+points = PackedVector2Array(0.0, -300.0, 0.0, -14.0)
+width = 2.0
+default_color = Color(0.85, 0.9, 1.0, 0.55)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Body" type="Node2D" parent="."]
+
+[node name="Legs" type="Node2D" parent="Body"]
+
+[node name="LegL0" type="Line2D" parent="Body/Legs"]
+points = PackedVector2Array(0.0, -6.0, -28.0, -22.0, -42.0, -4.0)
+width = 4.0
+default_color = Color(0.09, 0.04, 0.13, 1.0)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="LegR0" type="Line2D" parent="Body/Legs"]
+points = PackedVector2Array(0.0, -6.0, 28.0, -22.0, 42.0, -4.0)
+width = 4.0
+default_color = Color(0.09, 0.04, 0.13, 1.0)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="LegL1" type="Line2D" parent="Body/Legs"]
+points = PackedVector2Array(0.0, 0.0, -28.0, -10.0, -42.0, 10.0)
+width = 4.0
+default_color = Color(0.09, 0.04, 0.13, 1.0)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="LegR1" type="Line2D" parent="Body/Legs"]
+points = PackedVector2Array(0.0, 0.0, 28.0, -10.0, 42.0, 10.0)
+width = 4.0
+default_color = Color(0.09, 0.04, 0.13, 1.0)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="LegL2" type="Line2D" parent="Body/Legs"]
+points = PackedVector2Array(0.0, 6.0, -28.0, 2.0, -42.0, 24.0)
+width = 4.0
+default_color = Color(0.09, 0.04, 0.13, 1.0)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="LegR2" type="Line2D" parent="Body/Legs"]
+points = PackedVector2Array(0.0, 6.0, 28.0, 2.0, 42.0, 24.0)
+width = 4.0
+default_color = Color(0.09, 0.04, 0.13, 1.0)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="LegL3" type="Line2D" parent="Body/Legs"]
+points = PackedVector2Array(0.0, 12.0, -28.0, 14.0, -42.0, 38.0)
+width = 4.0
+default_color = Color(0.09, 0.04, 0.13, 1.0)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="LegR3" type="Line2D" parent="Body/Legs"]
+points = PackedVector2Array(0.0, 12.0, 28.0, 14.0, 42.0, 38.0)
+width = 4.0
+default_color = Color(0.09, 0.04, 0.13, 1.0)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Abdomen" type="Polygon2D" parent="Body"]
+color = Color(0.17, 0.08, 0.24, 1.0)
+polygon = PackedVector2Array(23.0, -4.0, 22.651, -0.006, 21.613, 3.866, 19.919, 7.5, 17.619, 10.784, 14.784, 13.619, 11.5, 15.919, 7.866, 17.613, 3.994, 18.651, 0.0, 19.0, -3.994, 18.651, -7.866, 17.613, -11.5, 15.919, -14.784, 13.619, -17.619, 10.784, -19.919, 7.5, -21.613, 3.866, -22.651, -0.006, -23.0, -4.0, -22.651, -7.994, -21.613, -11.866, -19.919, -15.5, -17.619, -18.784, -14.784, -21.619, -11.5, -23.919, -7.866, -25.613, -3.994, -26.651, 0.0, -27.0, 3.994, -26.651, 7.866, -25.613, 11.5, -23.919, 14.784, -21.619, 17.619, -18.784, 19.919, -15.5, 21.613, -11.866, 22.651, -7.994)
+antialiased = true
+
+[node name="Mark" type="Polygon2D" parent="Body"]
+color = Color(0.8, 0.22, 0.47, 1.0)
+polygon = PackedVector2Array(0.0, -18.0, 7.0, -7.0, 0.0, 4.0, -7.0, -7.0)
+antialiased = true
+
+[node name="Head" type="Polygon2D" parent="Body"]
+color = Color(0.12, 0.05, 0.18, 1.0)
+polygon = PackedVector2Array(13.0, 17.0, 12.674, 19.893, 11.713, 22.64, 10.164, 25.105, 8.105, 27.164, 5.64, 28.713, 2.893, 29.674, 0.0, 30.0, -2.893, 29.674, -5.64, 28.713, -8.105, 27.164, -10.164, 25.105, -11.713, 22.64, -12.674, 19.893, -13.0, 17.0, -12.674, 14.107, -11.713, 11.36, -10.164, 8.895, -8.105, 6.836, -5.64, 5.287, -2.893, 4.326, 0.0, 4.0, 2.893, 4.326, 5.64, 5.287, 8.105, 6.836, 10.164, 8.895, 11.713, 11.36, 12.674, 14.107)
+antialiased = true
+
+[node name="EyeGlow" type="Sprite2D" parent="Body"]
+modulate = Color(1.0, 0.2, 0.3, 0.8)
+position = Vector2(0.0, 21.0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_r")
+material = ExtResource("3_r")
+
+[node name="Eye0" type="Polygon2D" parent="Body"]
+color = Color(1.0, 0.3, 0.36, 1.0)
+polygon = PackedVector2Array(-1.8, 19.0, -2.411, 20.881, -4.011, 22.043, -5.989, 22.043, -7.589, 20.881, -8.2, 19.0, -7.589, 17.119, -5.989, 15.957, -4.011, 15.957, -2.411, 17.119)
+antialiased = true
+
+[node name="Eye1" type="Polygon2D" parent="Body"]
+color = Color(1.0, 0.3, 0.36, 1.0)
+polygon = PackedVector2Array(8.2, 19.0, 7.589, 20.881, 5.989, 22.043, 4.011, 22.043, 2.411, 20.881, 1.8, 19.0, 2.411, 17.119, 4.011, 15.957, 5.989, 15.957, 7.589, 17.119)
+antialiased = true
+
+[node name="Eye2" type="Polygon2D" parent="Body"]
+color = Color(1.0, 0.3, 0.36, 1.0)
+polygon = PackedVector2Array(-6.8, 24.0, -7.22, 25.293, -8.32, 26.092, -9.68, 26.092, -10.78, 25.293, -11.2, 24.0, -10.78, 22.707, -9.68, 21.908, -8.32, 21.908, -7.22, 22.707)
+antialiased = true
+
+[node name="Eye3" type="Polygon2D" parent="Body"]
+color = Color(1.0, 0.3, 0.36, 1.0)
+polygon = PackedVector2Array(11.2, 24.0, 10.78, 25.293, 9.68, 26.092, 8.32, 26.092, 7.22, 25.293, 6.8, 24.0, 7.22, 22.707, 8.32, 21.908, 9.68, 21.908, 10.78, 22.707)
+antialiased = true

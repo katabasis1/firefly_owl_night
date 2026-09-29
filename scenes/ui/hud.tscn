@@ -1,0 +1,317 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_r"]
+[ext_resource type="Script" path="res://scripts/juicy_button.gd" id="2_r"]
+[ext_resource type="FontFile" path="res://ui/NotoSans-Black.ttf" id="3_r"]
+[ext_resource type="Texture2D" path="res://art/glow.tres" id="4_r"]
+[ext_resource type="Material" path="res://art/add.tres" id="5_r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1"]
+bg_color = Color(0.05, 0.03, 0.12, 0.6)
+corner_radius_bottom_left = 34
+corner_radius_bottom_right = 34
+shadow_color = Color(0.0, 0.0, 0.0, 0.3)
+shadow_size = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2"]
+bg_color = Color(0.08, 0.05, 0.18, 0.9)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.42, 0.32, 0.72, 1.0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3"]
+bg_color = Color(1.0, 0.83, 0.36, 1.0)
+corner_radius_top_left = 13
+corner_radius_top_right = 13
+corner_radius_bottom_right = 13
+corner_radius_bottom_left = 13
+shadow_color = Color(1.0, 0.8, 0.3, 0.45)
+shadow_size = 6
+
+[node name="HUD" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_r")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 1
+mouse_filter = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopBar" type="Panel" parent="Root"]
+mouse_filter = 2
+offset_left = 0.0
+offset_top = -20.0
+offset_right = 720.0
+offset_bottom = 172.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1")
+
+[node name="MenuBtn" type="Button" parent="Root"]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 108.0
+offset_bottom = 108.0
+text = ""
+theme_type_variation = &"IconButton"
+script = ExtResource("2_r")
+
+[node name="Icon" type="Node2D" parent="Root/MenuBtn"]
+position = Vector2(42.0, 40.0)
+
+[node name="Bar0" type="Polygon2D" parent="Root/MenuBtn/Icon"]
+color = Color(1.0, 0.95, 0.85, 1.0)
+polygon = PackedVector2Array(14.5, -16.5, 15.839, -16.234, 16.975, -15.475, 17.734, -14.339, 18.0, -13.0, 17.734, -11.661, 16.975, -10.525, 15.839, -9.766, 14.5, -9.5, -14.5, -9.5, -15.839, -9.766, -16.975, -10.525, -17.734, -11.661, -18.0, -13.0, -17.734, -14.339, -16.975, -15.475, -15.839, -16.234, -14.5, -16.5)
+antialiased = true
+
+[node name="Bar1" type="Polygon2D" parent="Root/MenuBtn/Icon"]
+color = Color(1.0, 0.95, 0.85, 1.0)
+polygon = PackedVector2Array(14.5, -3.5, 15.839, -3.234, 16.975, -2.475, 17.734, -1.339, 18.0, 0.0, 17.734, 1.339, 16.975, 2.475, 15.839, 3.234, 14.5, 3.5, -14.5, 3.5, -15.839, 3.234, -16.975, 2.475, -17.734, 1.339, -18.0, 0.0, -17.734, -1.339, -16.975, -2.475, -15.839, -3.234, -14.5, -3.5)
+antialiased = true
+
+[node name="Bar2" type="Polygon2D" parent="Root/MenuBtn/Icon"]
+color = Color(1.0, 0.95, 0.85, 1.0)
+polygon = PackedVector2Array(14.5, 9.5, 15.839, 9.766, 16.975, 10.525, 17.734, 11.661, 18.0, 13.0, 17.734, 14.339, 16.975, 15.475, 15.839, 16.234, 14.5, 16.5, -14.5, 16.5, -15.839, 16.234, -16.975, 15.475, -17.734, 14.339, -18.0, 13.0, -17.734, 11.661, -16.975, 10.525, -15.839, 9.766, -14.5, 9.5)
+antialiased = true
+
+[node name="RestartBtn" type="Button" parent="Root"]
+offset_left = 612.0
+offset_top = 24.0
+offset_right = 696.0
+offset_bottom = 108.0
+text = ""
+theme_type_variation = &"IconButton"
+script = ExtResource("2_r")
+
+[node name="Icon" type="Node2D" parent="Root/RestartBtn"]
+position = Vector2(42.0, 40.0)
+
+[node name="Arc" type="Line2D" parent="Root/RestartBtn/Icon"]
+points = PackedVector2Array(7.671, -14.041, 11.243, -11.384, 13.945, -7.845, 15.566, -3.699, 15.983, 0.733, 15.162, 5.109, 13.168, 9.089, 10.153, 12.366, 6.353, 14.685, 2.061, 15.867, -2.391, 15.82, -6.658, 14.549, -10.409, 12.151, -13.354, 8.813, -15.266, 4.792, -15.995, 0.4, -15.486, -4.023, -13.778, -8.134, -11.003, -11.616, -7.377, -14.198, -3.179, -15.681)
+width = 6.0
+default_color = Color(1.0, 0.95, 0.85, 1.0)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Head" type="Polygon2D" parent="Root/RestartBtn/Icon"]
+color = Color(1.0, 0.95, 0.85, 1.0)
+polygon = PackedVector2Array(5.671, -26.041, 18.671, -13.041, 3.671, -5.041)
+antialiased = true
+
+[node name="LevelLabel" type="Label" parent="Root"]
+offset_left = 120.0
+offset_top = 18.0
+offset_right = 600.0
+offset_bottom = 70.0
+text = "УРОВЕНЬ 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 38
+theme_override_colors/font_color = Color(1.0, 0.92, 0.7, 1.0)
+theme_override_fonts/font = ExtResource("3_r")
+
+[node name="HintBtn" type="Button" parent="Root"]
+offset_left = 516.0
+offset_top = 24.0
+offset_right = 600.0
+offset_bottom = 108.0
+text = ""
+theme_type_variation = &"IconButton"
+script = ExtResource("2_r")
+
+[node name="Icon" type="Node2D" parent="Root/HintBtn"]
+position = Vector2(42.0, 38.0)
+
+[node name="Glow" type="Sprite2D" parent="Root/HintBtn/Icon"]
+modulate = Color(1.0, 0.85, 0.35, 0.6)
+position = Vector2(0.0, -4.0)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("4_r")
+material = ExtResource("5_r")
+
+[node name="Bulb" type="Polygon2D" parent="Root/HintBtn/Icon"]
+color = Color(1.0, 0.88, 0.42, 1.0)
+polygon = PackedVector2Array(15.0, -6.0, 14.489, -2.118, 12.99, 1.5, 10.607, 4.607, 7.5, 6.99, 3.882, 8.489, 0.0, 9.0, -3.882, 8.489, -7.5, 6.99, -10.607, 4.607, -12.99, 1.5, -14.489, -2.118, -15.0, -6.0, -14.489, -9.882, -12.99, -13.5, -10.607, -16.607, -7.5, -18.99, -3.882, -20.489, 0.0, -21.0, 3.882, -20.489, 7.5, -18.99, 10.607, -16.607, 12.99, -13.5, 14.489, -9.882)
+antialiased = true
+
+[node name="Shine" type="Polygon2D" parent="Root/HintBtn/Icon"]
+color = Color(1.0, 1.0, 0.9, 1.0)
+polygon = PackedVector2Array(-1.316, -9.442, -2.978, -6.888, -5.181, -5.435, -7.337, -5.474, -8.866, -6.993, -9.359, -9.586, -8.684, -12.558, -7.022, -15.112, -4.819, -16.565, -2.663, -16.526, -1.134, -15.007, -0.641, -12.414)
+antialiased = true
+
+[node name="Base" type="Polygon2D" parent="Root/HintBtn/Icon"]
+color = Color(0.85, 0.85, 0.95, 1.0)
+polygon = PackedVector2Array(5.0, 8.0, 6.148, 8.228, 7.121, 8.879, 7.772, 9.852, 8.0, 11.0, 8.0, 17.0, 7.772, 18.148, 7.121, 19.121, 6.148, 19.772, 5.0, 20.0, -5.0, 20.0, -6.148, 19.772, -7.121, 19.121, -7.772, 18.148, -8.0, 17.0, -8.0, 11.0, -7.772, 9.852, -7.121, 8.879, -6.148, 8.228, -5.0, 8.0)
+antialiased = true
+
+[node name="Thread" type="Line2D" parent="Root/HintBtn/Icon"]
+points = PackedVector2Array(-8.0, 13.0, 8.0, 13.0)
+width = 2.0
+default_color = Color(0.5, 0.5, 0.65, 1.0)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Badge" type="Node2D" parent="Root/HintBtn"]
+position = Vector2(70.0, 14.0)
+
+[node name="Bg" type="Polygon2D" parent="Root/HintBtn/Badge"]
+color = Color(0.35, 0.85, 0.45, 1.0)
+polygon = PackedVector2Array(14.0, 0.0, 13.315, 4.326, 11.326, 8.229, 8.229, 11.326, 4.326, 13.315, 0.0, 14.0, -4.326, 13.315, -8.229, 11.326, -11.326, 8.229, -13.315, 4.326, -14.0, 0.0, -13.315, -4.326, -11.326, -8.229, -8.229, -11.326, -4.326, -13.315, 0.0, -14.0, 4.326, -13.315, 8.229, -11.326, 11.326, -8.229, 13.315, -4.326)
+antialiased = true
+
+[node name="Play" type="Polygon2D" parent="Root/HintBtn/Badge"]
+color = Color(1.0, 1.0, 1.0, 1.0)
+polygon = PackedVector2Array(-4.0, -7.0, 7.0, 0.0, -4.0, 7.0)
+antialiased = true
+
+[node name="Dews" type="Node2D" parent="Root"]
+position = Vector2(360.0, 98.0)
+
+[node name="D1" type="Node2D" parent="Root/Dews"]
+position = Vector2(-44.0, 0.0)
+
+[node name="Drop" type="Polygon2D" parent="Root/Dews/D1"]
+color = Color(0.42, 0.86, 1.0, 1.0)
+polygon = PackedVector2Array(0.0, -17.0, 0.424, -16.574, 1.641, -15.316, 3.501, -13.291, 5.767, -10.599, 8.149, -7.376, 10.334, -3.783, 12.021, 0.0, 12.958, 3.783, 12.969, 7.376, 11.975, 10.599, 10.005, 13.291, 7.191, 15.316, 3.759, 16.574, 0.0, 17.0, -3.759, 16.574, -7.191, 15.316, -10.005, 13.291, -11.975, 10.599, -12.969, 7.376, -12.958, 3.783, -12.021, 0.0, -10.334, -3.783, -8.149, -7.376, -5.767, -10.599, -3.501, -13.291, -1.641, -15.316, -0.424, -16.574)
+antialiased = true
+
+[node name="Shine" type="Polygon2D" parent="Root/Dews/D1"]
+color = Color(1.0, 1.0, 1.0, 0.9)
+polygon = PackedVector2Array(-2.578, 3.619, -3.767, 6.348, -5.428, 7.799, -6.925, 7.416, -7.687, 5.347, -7.422, 2.381, -6.233, -0.348, -4.572, -1.799, -3.075, -1.416, -2.313, 0.653)
+antialiased = true
+
+[node name="D2" type="Node2D" parent="Root/Dews"]
+position = Vector2(0.0, 0.0)
+
+[node name="Drop" type="Polygon2D" parent="Root/Dews/D2"]
+color = Color(0.42, 0.86, 1.0, 1.0)
+polygon = PackedVector2Array(0.0, -17.0, 0.424, -16.574, 1.641, -15.316, 3.501, -13.291, 5.767, -10.599, 8.149, -7.376, 10.334, -3.783, 12.021, 0.0, 12.958, 3.783, 12.969, 7.376, 11.975, 10.599, 10.005, 13.291, 7.191, 15.316, 3.759, 16.574, 0.0, 17.0, -3.759, 16.574, -7.191, 15.316, -10.005, 13.291, -11.975, 10.599, -12.969, 7.376, -12.958, 3.783, -12.021, 0.0, -10.334, -3.783, -8.149, -7.376, -5.767, -10.599, -3.501, -13.291, -1.641, -15.316, -0.424, -16.574)
+antialiased = true
+
+[node name="Shine" type="Polygon2D" parent="Root/Dews/D2"]
+color = Color(1.0, 1.0, 1.0, 0.9)
+polygon = PackedVector2Array(-2.578, 3.619, -3.767, 6.348, -5.428, 7.799, -6.925, 7.416, -7.687, 5.347, -7.422, 2.381, -6.233, -0.348, -4.572, -1.799, -3.075, -1.416, -2.313, 0.653)
+antialiased = true
+
+[node name="D3" type="Node2D" parent="Root/Dews"]
+position = Vector2(44.0, 0.0)
+
+[node name="Drop" type="Polygon2D" parent="Root/Dews/D3"]
+color = Color(0.42, 0.86, 1.0, 1.0)
+polygon = PackedVector2Array(0.0, -17.0, 0.424, -16.574, 1.641, -15.316, 3.501, -13.291, 5.767, -10.599, 8.149, -7.376, 10.334, -3.783, 12.021, 0.0, 12.958, 3.783, 12.969, 7.376, 11.975, 10.599, 10.005, 13.291, 7.191, 15.316, 3.759, 16.574, 0.0, 17.0, -3.759, 16.574, -7.191, 15.316, -10.005, 13.291, -11.975, 10.599, -12.969, 7.376, -12.958, 3.783, -12.021, 0.0, -10.334, -3.783, -8.149, -7.376, -5.767, -10.599, -3.501, -13.291, -1.641, -15.316, -0.424, -16.574)
+antialiased = true
+
+[node name="Shine" type="Polygon2D" parent="Root/Dews/D3"]
+color = Color(1.0, 1.0, 1.0, 0.9)
+polygon = PackedVector2Array(-2.578, 3.619, -3.767, 6.348, -5.428, 7.799, -6.925, 7.416, -7.687, 5.347, -7.422, 2.381, -6.233, -0.348, -4.572, -1.799, -3.075, -1.416, -2.313, 0.653)
+antialiased = true
+
+[node name="InkGlow" type="Sprite2D" parent="Root"]
+modulate = Color(1.0, 0.85, 0.4, 0.9)
+position = Vector2(116.0, 139.0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_r")
+material = ExtResource("5_r")
+
+[node name="InkDot" type="Polygon2D" parent="Root"]
+color = Color(1.0, 0.96, 0.6, 1.0)
+polygon = PackedVector2Array(123.0, 139.0, 122.467, 141.679, 120.95, 143.95, 118.679, 145.467, 116.0, 146.0, 113.321, 145.467, 111.05, 143.95, 109.533, 141.679, 109.0, 139.0, 109.533, 136.321, 111.05, 134.05, 113.321, 132.533, 116.0, 132.0, 118.679, 132.533, 120.95, 134.05, 122.467, 136.321)
+antialiased = true
+
+[node name="InkBar" type="ProgressBar" parent="Root"]
+mouse_filter = 2
+value = 100.0
+show_percentage = false
+offset_left = 138.0
+offset_top = 127.0
+offset_right = 560.0
+offset_bottom = 151.0
+theme_override_styles/background = SubResource("StyleBoxFlat_2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3")
+
+[node name="TimeLabel" type="Label" parent="Root"]
+offset_left = 572.0
+offset_top = 116.0
+offset_right = 712.0
+offset_bottom = 162.0
+text = "0.0 с"
+horizontal_alignment = 0
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 26
+theme_override_colors/font_color = Color(0.78, 0.9, 1.0, 1.0)
+
+[node name="ParMark" type="Node2D" parent="Root"]
+position = Vector2(400.0, 139.0)
+
+[node name="Tick" type="Line2D" parent="Root/ParMark"]
+points = PackedVector2Array(0.0, -16.0, 0.0, 16.0)
+width = 4.0
+default_color = Color(1.0, 1.0, 1.0, 0.95)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Star" type="Node2D" parent="Root/ParMark"]
+position = Vector2(0.0, 30.0)
+
+[node name="Glow" type="Sprite2D" parent="Root/ParMark/Star"]
+modulate = Color(1.0, 0.8, 0.3, 0.7)
+position = Vector2(0.0, 0.0)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_r")
+material = ExtResource("5_r")
+
+[node name="Shape" type="Polygon2D" parent="Root/ParMark/Star"]
+color = Color(1.0, 0.84, 0.32, 1.0)
+polygon = PackedVector2Array(0.0, -13.0, 3.527, -4.854, 12.364, -4.017, 5.706, 1.854, 7.641, 10.517, 0.0, 6.0, -7.641, 10.517, -5.706, 1.854, -12.364, -4.017, -3.527, -4.854)
+antialiased = true
+
+[node name="Frozen" type="Label" parent="Root"]
+offset_left = 160.0
+offset_top = 1206.0
+offset_right = 560.0
+offset_bottom = 1250.0
+text = "ВРЕМЯ СТОИТ"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 26
+theme_override_colors/font_color = Color(0.72, 0.88, 1.0, 1.0)
+visible = false
+
+[node name="Hint" type="Label" parent="Root"]
+offset_left = 30.0
+offset_top = 1192.0
+offset_right = 690.0
+offset_bottom = 1274.0
+text = ""
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 26
+theme_override_colors/font_color = Color(1.0, 0.95, 0.8, 1.0)
+autowrap_mode = 3
+
+[node name="Toast" type="Label" parent="Root"]
+offset_left = 40.0
+offset_top = 560.0
+offset_right = 680.0
+offset_bottom = 690.0
+text = ""
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 42
+theme_override_colors/font_color = Color(1.0, 0.9, 0.55, 1.0)
+theme_override_fonts/font = ExtResource("3_r")
+autowrap_mode = 3
+visible = false

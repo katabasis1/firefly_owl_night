@@ -1,0 +1,146 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/bush.gd" id="1_r"]
+[ext_resource type="Texture2D" path="res://art/glow.tres" id="2_r"]
+[ext_resource type="Material" path="res://art/add.tres" id="3_r"]
+
+[node name="Reeds" type="Node2D"]
+script = ExtResource("1_r")
+
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="Water" type="Polygon2D" parent="Visual"]
+color = Color(0.05, 0.2, 0.2, 0.55)
+polygon = PackedVector2Array(92.0, 40.0, 90.232, 47.804, 84.997, 55.307, 76.495, 62.223, 65.054, 68.284, 51.112, 73.259, 35.207, 76.955, 17.948, 79.231, 0.0, 80.0, -17.948, 79.231, -35.207, 76.955, -51.112, 73.259, -65.054, 68.284, -76.495, 62.223, -84.997, 55.307, -90.232, 47.804, -92.0, 40.0, -90.232, 32.196, -84.997, 24.693, -76.495, 17.777, -65.054, 11.716, -51.112, 6.741, -35.207, 3.045, -17.948, 0.769, 0.0, 0.0, 17.948, 0.769, 35.207, 3.045, 51.112, 6.741, 65.054, 11.716, 76.495, 17.777, 84.997, 24.693, 90.232, 32.196)
+antialiased = true
+
+[node name="WaterHi" type="Polygon2D" parent="Visual"]
+color = Color(0.2, 0.45, 0.4, 0.3)
+polygon = PackedVector2Array(50.0, 36.0, 47.956, 41.176, 41.962, 46.0, 32.426, 50.142, 20.0, 53.321, 5.529, 55.319, -10.0, 56.0, -25.529, 55.319, -40.0, 53.321, -52.426, 50.142, -61.962, 46.0, -67.956, 41.176, -70.0, 36.0, -67.956, 30.824, -61.962, 26.0, -52.426, 21.858, -40.0, 18.679, -25.529, 16.681, -10.0, 16.0, 5.529, 16.681, 20.0, 18.679, 32.426, 21.858, 41.962, 26.0, 47.956, 30.824)
+antialiased = true
+
+[node name="Blade0" type="Polygon2D" parent="Visual"]
+color = Color(0.132, 0.467, 0.2, 1.0)
+polygon = PackedVector2Array(-4.122, 55.0, 2.633, -90.43, 5.878, 55.0)
+antialiased = true
+
+[node name="Head0" type="Polygon2D" parent="Visual"]
+color = Color(0.42, 0.26, 0.14, 1.0)
+polygon = PackedVector2Array(3.482, -87.344, 5.778, -86.887, 7.725, -85.586, 9.025, -83.64, 9.482, -81.344, 9.482, -63.344, 9.025, -61.048, 7.725, -59.101, 5.778, -57.801, 3.482, -57.344, 1.186, -57.801, -0.761, -59.101, -2.061, -61.048, -2.518, -63.344, -2.518, -81.344, -2.061, -83.64, -0.761, -85.586, 1.186, -86.887, 3.482, -87.344)
+antialiased = true
+
+[node name="Blade1" type="Polygon2D" parent="Visual"]
+color = Color(0.21, 0.41, 0.2, 1.0)
+polygon = PackedVector2Array(23.487, 55.0, 35.09, -62.121, 33.487, 55.0)
+antialiased = true
+
+[node name="Blade2" type="Polygon2D" parent="Visual"]
+color = Color(0.121, 0.393, 0.2, 1.0)
+polygon = PackedVector2Array(26.599, 55.0, 15.257, -60.305, 36.599, 55.0)
+antialiased = true
+
+[node name="Blade3" type="Polygon2D" parent="Visual"]
+color = Color(0.174, 0.383, 0.2, 1.0)
+polygon = PackedVector2Array(33.389, 55.0, 45.749, -58.02, 43.389, 55.0)
+antialiased = true
+
+[node name="Head3" type="Polygon2D" parent="Visual"]
+color = Color(0.42, 0.26, 0.14, 1.0)
+polygon = PackedVector2Array(45.477, -61.416, 47.773, -60.959, 49.72, -59.659, 51.02, -57.712, 51.477, -55.416, 51.477, -37.416, 51.02, -35.12, 49.72, -33.173, 47.773, -31.873, 45.477, -31.416, 43.181, -31.873, 41.234, -33.173, 39.934, -35.12, 39.477, -37.416, 39.477, -55.416, 39.934, -57.712, 41.234, -59.659, 43.181, -60.959, 45.477, -61.416)
+antialiased = true
+
+[node name="Blade4" type="Polygon2D" parent="Visual"]
+color = Color(0.128, 0.455, 0.2, 1.0)
+polygon = PackedVector2Array(-10.179, 55.0, -19.692, -57.399, -0.179, 55.0)
+antialiased = true
+
+[node name="Blade5" type="Polygon2D" parent="Visual"]
+color = Color(0.212, 0.443, 0.2, 1.0)
+polygon = PackedVector2Array(-60.766, 55.0, -50.994, -52.471, -50.766, 55.0)
+antialiased = true
+
+[node name="Blade6" type="Polygon2D" parent="Visual"]
+color = Color(0.16, 0.476, 0.2, 1.0)
+polygon = PackedVector2Array(-52.998, 55.0, -63.504, -49.281, -42.998, 55.0)
+antialiased = true
+
+[node name="Head6" type="Polygon2D" parent="Visual"]
+color = Color(0.42, 0.26, 0.14, 1.0)
+polygon = PackedVector2Array(-59.203, -54.425, -56.907, -53.968, -54.96, -52.667, -53.659, -50.721, -53.203, -48.425, -53.203, -30.425, -53.659, -28.128, -54.96, -26.182, -56.907, -24.881, -59.203, -24.425, -61.499, -24.881, -63.445, -26.182, -64.746, -28.128, -65.203, -30.425, -65.203, -48.425, -64.746, -50.721, -63.445, -52.667, -61.499, -53.968, -59.203, -54.425)
+antialiased = true
+
+[node name="Blade7" type="Polygon2D" parent="Visual"]
+color = Color(0.129, 0.467, 0.2, 1.0)
+polygon = PackedVector2Array(-37.657, 55.0, -42.035, -47.593, -27.657, 55.0)
+antialiased = true
+
+[node name="Blade8" type="Polygon2D" parent="Visual"]
+color = Color(0.137, 0.471, 0.2, 1.0)
+polygon = PackedVector2Array(38.331, 55.0, 55.742, -46.969, 48.331, 55.0)
+antialiased = true
+
+[node name="Blade9" type="Polygon2D" parent="Visual"]
+color = Color(0.216, 0.388, 0.2, 1.0)
+polygon = PackedVector2Array(51.897, 55.0, 58.884, -41.723, 61.897, 55.0)
+antialiased = true
+
+[node name="Head9" type="Polygon2D" parent="Visual"]
+color = Color(0.42, 0.26, 0.14, 1.0)
+polygon = PackedVector2Array(59.687, -48.378, 61.983, -47.921, 63.929, -46.621, 65.23, -44.674, 65.687, -42.378, 65.687, -24.378, 65.23, -22.082, 63.929, -20.136, 61.983, -18.835, 59.687, -18.378, 57.391, -18.835, 55.444, -20.136, 54.143, -22.082, 53.687, -24.378, 53.687, -42.378, 54.143, -44.674, 55.444, -46.621, 57.391, -47.921, 59.687, -48.378)
+antialiased = true
+
+[node name="Blade10" type="Polygon2D" parent="Visual"]
+color = Color(0.176, 0.471, 0.2, 1.0)
+polygon = PackedVector2Array(50.762, 55.0, 56.215, -39.849, 60.762, 55.0)
+antialiased = true
+
+[node name="Blade11" type="Polygon2D" parent="Visual"]
+color = Color(0.135, 0.42, 0.2, 1.0)
+polygon = PackedVector2Array(48.112, 55.0, 47.25, -38.287, 58.112, 55.0)
+antialiased = true
+
+[node name="Blade12" type="Polygon2D" parent="Visual"]
+color = Color(0.219, 0.53, 0.2, 1.0)
+polygon = PackedVector2Array(11.331, 55.0, 10.476, -37.454, 21.331, 55.0)
+antialiased = true
+
+[node name="Head12" type="Polygon2D" parent="Visual"]
+color = Color(0.42, 0.26, 0.14, 1.0)
+polygon = PackedVector2Array(12.847, -44.963, 15.143, -44.506, 17.089, -43.206, 18.39, -41.259, 18.847, -38.963, 18.847, -20.963, 18.39, -18.667, 17.089, -16.72, 15.143, -15.42, 12.847, -14.963, 10.551, -15.42, 8.604, -16.72, 7.303, -18.667, 6.847, -20.963, 6.847, -38.963, 7.303, -41.259, 8.604, -43.206, 10.551, -44.506, 12.847, -44.963)
+antialiased = true
+
+[node name="Blade13" type="Polygon2D" parent="Visual"]
+color = Color(0.132, 0.486, 0.2, 1.0)
+polygon = PackedVector2Array(-6.16, 55.0, -5.37, -36.409, 3.84, 55.0)
+antialiased = true
+
+[node name="Blade14" type="Polygon2D" parent="Visual"]
+color = Color(0.215, 0.416, 0.2, 1.0)
+polygon = PackedVector2Array(46.319, 55.0, 49.919, -35.386, 56.319, 55.0)
+antialiased = true
+
+[node name="Glow" type="Sprite2D" parent="Visual"]
+modulate = Color(0.4, 1.0, 0.6, 0.08)
+position = Vector2(0.0, 0.0)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("2_r")
+material = ExtResource("3_r")
+
+[node name="Leaves" type="CPUParticles2D" parent="."]
+emitting = false
+texture = ExtResource("2_r")
+material = ExtResource("3_r")
+one_shot = true
+amount = 10
+lifetime = 0.9
+explosiveness = 0.9
+emission_shape = 1
+emission_sphere_radius = 40.0
+direction = Vector2(0.0, -1.0)
+spread = 80.0
+gravity = Vector2(0.0, 300.0)
+initial_velocity_min = 80.0
+initial_velocity_max = 180.0
+scale_amount_min = 0.06
+scale_amount_max = 0.12
+color = Color(0.4, 0.8, 0.35, 1.0)

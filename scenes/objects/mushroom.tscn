@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/pulse.gd" id="1_r"]
+[ext_resource type="Texture2D" path="res://art/glow.tres" id="2_r"]
+[ext_resource type="Material" path="res://art/add.tres" id="3_r"]
+
+[node name="Mushroom" type="Node2D"]
+
+[node name="Glow" type="Sprite2D" parent="."]
+modulate = Color(0.4, 0.9, 1.0, 0.45)
+position = Vector2(0.0, -18.0)
+scale = Vector2(1.0, 1.0)
+texture = ExtResource("2_r")
+material = ExtResource("3_r")
+script = ExtResource("1_r")
+amount = 0.12
+speed = 2.0
+
+[node name="A" type="Node2D" parent="."]
+position = Vector2(0.0, 0.0)
+scale = Vector2(1.0, 1.0)
+
+[node name="Stem" type="Polygon2D" parent="A"]
+color = Color(0.88, 0.88, 0.96, 1.0)
+polygon = PackedVector2Array(2.0, -18.0, 3.531, -17.696, 4.828, -16.828, 5.696, -15.531, 6.0, -14.0, 6.0, 6.0, 5.696, 7.531, 4.828, 8.828, 3.531, 9.696, 2.0, 10.0, -2.0, 10.0, -3.531, 9.696, -4.828, 8.828, -5.696, 7.531, -6.0, 6.0, -6.0, -14.0, -5.696, -15.531, -4.828, -16.828, -3.531, -17.696, -2.0, -18.0)
+antialiased = true
+
+[node name="Cap" type="Polygon2D" parent="A"]
+color = Color(0.35, 0.85, 1.0, 1.0)
+polygon = PackedVector2Array(-22.0, -16.0, -21.729, -18.503, -20.923, -20.944, -19.602, -23.264, -17.798, -25.405, -15.556, -27.314, -12.931, -28.944, -9.988, -30.256, -6.798, -31.217, -3.442, -31.803, 0.0, -32.0, 3.442, -31.803, 6.798, -31.217, 9.988, -30.256, 12.931, -28.944, 15.556, -27.314, 17.798, -25.405, 19.602, -23.264, 20.923, -20.944, 21.729, -18.503, 22.0, -16.0)
+antialiased = true
+
+[node name="Spot0" type="Polygon2D" parent="A"]
+color = Color(1.0, 1.0, 1.0, 0.85)
+polygon = PackedVector2Array(-6.0, -22.0, -6.573, -20.237, -8.073, -19.147, -9.927, -19.147, -11.427, -20.237, -12.0, -22.0, -11.427, -23.763, -9.927, -24.853, -8.073, -24.853, -6.573, -23.763)
+antialiased = true
+
+[node name="Spot1" type="Polygon2D" parent="A"]
+color = Color(1.0, 1.0, 1.0, 0.85)
+polygon = PackedVector2Array(8.5, -26.0, 7.832, -23.943, 6.082, -22.671, 3.918, -22.671, 2.168, -23.943, 1.5, -26.0, 2.168, -28.057, 3.918, -29.329, 6.082, -29.329, 7.832, -28.057)
+antialiased = true
+
+[node name="Spot2" type="Polygon2D" parent="A"]
+color = Color(1.0, 1.0, 1.0, 0.85)
+polygon = PackedVector2Array(14.5, -19.0, 14.023, -17.531, 12.773, -16.622, 11.227, -16.622, 9.977, -17.531, 9.5, -19.0, 9.977, -20.469, 11.227, -21.378, 12.773, -21.378, 14.023, -20.469)
+antialiased = true
+
+[node name="B" type="Node2D" parent="."]
+position = Vector2(24.0, 6.0)
+scale = Vector2(0.6, 0.6)
+
+[node name="Stem" type="Polygon2D" parent="B"]
+color = Color(0.88, 0.88, 0.96, 1.0)
+polygon = PackedVector2Array(2.0, -18.0, 3.531, -17.696, 4.828, -16.828, 5.696, -15.531, 6.0, -14.0, 6.0, 6.0, 5.696, 7.531, 4.828, 8.828, 3.531, 9.696, 2.0, 10.0, -2.0, 10.0, -3.531, 9.696, -4.828, 8.828, -5.696, 7.531, -6.0, 6.0, -6.0, -14.0, -5.696, -15.531, -4.828, -16.828, -3.531, -17.696, -2.0, -18.0)
+antialiased = true
+
+[node name="Cap" type="Polygon2D" parent="B"]
+color = Color(0.35, 0.85, 1.0, 1.0)
+polygon = PackedVector2Array(-22.0, -16.0, -21.729, -18.503, -20.923, -20.944, -19.602, -23.264, -17.798, -25.405, -15.556, -27.314, -12.931, -28.944, -9.988, -30.256, -6.798, -31.217, -3.442, -31.803, 0.0, -32.0, 3.442, -31.803, 6.798, -31.217, 9.988, -30.256, 12.931, -28.944, 15.556, -27.314, 17.798, -25.405, 19.602, -23.264, 20.923, -20.944, 21.729, -18.503, 22.0, -16.0)
+antialiased = true
+
+[node name="Spot0" type="Polygon2D" parent="B"]
+color = Color(1.0, 1.0, 1.0, 0.85)
+polygon = PackedVector2Array(-6.0, -22.0, -6.573, -20.237, -8.073, -19.147, -9.927, -19.147, -11.427, -20.237, -12.0, -22.0, -11.427, -23.763, -9.927, -24.853, -8.073, -24.853, -6.573, -23.763)
+antialiased = true
+
+[node name="Spot1" type="Polygon2D" parent="B"]
+color = Color(1.0, 1.0, 1.0, 0.85)
+polygon = PackedVector2Array(8.5, -26.0, 7.832, -23.943, 6.082, -22.671, 3.918, -22.671, 2.168, -23.943, 1.5, -26.0, 2.168, -28.057, 3.918, -29.329, 6.082, -29.329, 7.832, -28.057)
+antialiased = true
+
+[node name="Spot2" type="Polygon2D" parent="B"]
+color = Color(1.0, 1.0, 1.0, 0.85)
+polygon = PackedVector2Array(14.5, -19.0, 14.023, -17.531, 12.773, -16.622, 11.227, -16.622, 9.977, -17.531, 9.5, -19.0, 9.977, -20.469, 11.227, -21.378, 12.773, -21.378, 14.023, -20.469)
+antialiased = true

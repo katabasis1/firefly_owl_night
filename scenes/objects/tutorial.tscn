@@ -1,0 +1,114 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/tutorial.gd" id="1_r"]
+[ext_resource type="Material" path="res://art/add.tres" id="2_r"]
+[ext_resource type="Texture2D" path="res://art/glow.tres" id="3_r"]
+
+[node name="Tutorial" type="Path2D"]
+script = ExtResource("1_r")
+
+[node name="TrailGlow" type="Line2D" parent="."]
+points = PackedVector2Array()
+width = 26.0
+default_color = Color(0.75, 0.9, 1.0, 0.18)
+antialiased = true
+material = ExtResource("2_r")
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Trail" type="Line2D" parent="."]
+points = PackedVector2Array()
+width = 7.0
+default_color = Color(0.85, 0.95, 1.0, 0.55)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Tap" type="Node2D" parent="."]
+visible = false
+
+[node name="Ring" type="Line2D" parent="Tap"]
+points = PackedVector2Array(34.0, 0.0, 33.483, 5.904, 31.95, 11.629, 29.445, 17.0, 26.046, 21.855, 21.855, 26.046, 17.0, 29.445, 11.629, 31.95, 5.904, 33.483, 0.0, 34.0, -5.904, 33.483, -11.629, 31.95, -17.0, 29.445, -21.855, 26.046, -26.046, 21.855, -29.445, 17.0, -31.95, 11.629, -33.483, 5.904, -34.0, 0.0, -33.483, -5.904, -31.95, -11.629, -29.445, -17.0, -26.046, -21.855, -21.855, -26.046, -17.0, -29.445, -11.629, -31.95, -5.904, -33.483, 0.0, -34.0, 5.904, -33.483, 11.629, -31.95, 17.0, -29.445, 21.855, -26.046, 26.046, -21.855, 29.445, -17.0, 31.95, -11.629, 33.483, -5.904, 34.0, 0.0)
+width = 4.0
+default_color = Color(1.0, 1.0, 1.0, 0.9)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Hand" type="Node2D" parent="."]
+visible = false
+
+[node name="Shape" type="Node2D" parent="Hand"]
+rotation = -0.45
+
+[node name="OFinger" type="Polygon2D" parent="Hand/Shape"]
+color = Color(0.12, 0.08, 0.22, 0.9)
+polygon = PackedVector2Array(0.0, -4.0, 3.882, -3.489, 7.5, -1.99, 10.607, 0.393, 12.99, 3.5, 14.489, 7.118, 15.0, 11.0, 15.0, 63.0, 14.489, 66.882, 12.99, 70.5, 10.607, 73.607, 7.5, 75.99, 3.882, 77.489, 0.0, 78.0, -3.882, 77.489, -7.5, 75.99, -10.607, 73.607, -12.99, 70.5, -14.489, 66.882, -15.0, 63.0, -15.0, 11.0, -14.489, 7.118, -12.99, 3.5, -10.607, 0.393, -7.5, -1.99, -3.882, -3.489, 0.0, -4.0)
+antialiased = true
+
+[node name="OPalm" type="Polygon2D" parent="Hand/Shape"]
+color = Color(0.12, 0.08, 0.22, 0.9)
+polygon = PackedVector2Array(18.0, 44.0, 24.729, 44.886, 31.0, 47.483, 36.385, 51.615, 40.517, 57.0, 43.114, 63.271, 44.0, 70.0, 44.0, 104.0, 43.114, 110.729, 40.517, 117.0, 36.385, 122.385, 31.0, 126.517, 24.729, 129.114, 18.0, 130.0, -8.0, 130.0, -14.729, 129.114, -21.0, 126.517, -26.385, 122.385, -30.517, 117.0, -33.114, 110.729, -34.0, 104.0, -34.0, 70.0, -33.114, 63.271, -30.517, 57.0, -26.385, 51.615, -21.0, 47.483, -14.729, 44.886, -8.0, 44.0)
+antialiased = true
+
+[node name="OThumb" type="Polygon2D" parent="Hand/Shape"]
+color = Color(0.12, 0.08, 0.22, 0.9)
+polygon = PackedVector2Array(-19.959, 78.329, -16.794, 85.756, -15.314, 93.206, -15.662, 99.951, -17.806, 105.33, -21.535, 108.817, -26.484, 110.071, -32.169, 108.968, -38.033, 105.617, -43.502, 100.346, -48.041, 93.671, -51.206, 86.244, -52.686, 78.794, -52.338, 72.049, -50.194, 66.67, -46.465, 63.183, -41.516, 61.929, -35.831, 63.032, -29.967, 66.383, -24.498, 71.654)
+antialiased = true
+
+[node name="Finger" type="Polygon2D" parent="Hand/Shape"]
+color = Color(1.0, 0.97, 0.92, 1.0)
+polygon = PackedVector2Array(0.0, 0.0, 2.847, 0.375, 5.5, 1.474, 7.778, 3.222, 9.526, 5.5, 10.625, 8.153, 11.0, 11.0, 11.0, 63.0, 10.625, 65.847, 9.526, 68.5, 7.778, 70.778, 5.5, 72.526, 2.847, 73.625, 0.0, 74.0, -2.847, 73.625, -5.5, 72.526, -7.778, 70.778, -9.526, 68.5, -10.625, 65.847, -11.0, 63.0, -11.0, 11.0, -10.625, 8.153, -9.526, 5.5, -7.778, 3.222, -5.5, 1.474, -2.847, 0.375, 0.0, 0.0)
+antialiased = true
+
+[node name="Palm" type="Polygon2D" parent="Hand/Shape"]
+color = Color(1.0, 0.97, 0.92, 1.0)
+polygon = PackedVector2Array(18.0, 48.0, 23.694, 48.75, 29.0, 50.947, 33.556, 54.444, 37.053, 59.0, 39.25, 64.306, 40.0, 70.0, 40.0, 104.0, 39.25, 109.694, 37.053, 115.0, 33.556, 119.556, 29.0, 123.053, 23.694, 125.25, 18.0, 126.0, -8.0, 126.0, -13.694, 125.25, -19.0, 123.053, -23.556, 119.556, -27.053, 115.0, -29.25, 109.694, -30.0, 104.0, -30.0, 70.0, -29.25, 64.306, -27.053, 59.0, -23.556, 54.444, -19.0, 50.947, -13.694, 48.75, -8.0, 48.0)
+antialiased = true
+
+[node name="Thumb" type="Polygon2D" parent="Hand/Shape"]
+color = Color(1.0, 0.97, 0.92, 1.0)
+polygon = PackedVector2Array(-22.469, 80.247, -19.725, 86.495, -18.281, 92.694, -18.277, 98.238, -19.715, 102.584, -22.453, 105.307, -26.223, 106.14, -30.657, 105.001, -35.32, 102.003, -39.756, 97.438, -43.531, 91.753, -46.275, 85.505, -47.719, 79.306, -47.723, 73.762, -46.285, 69.416, -43.547, 66.693, -39.777, 65.86, -35.343, 66.999, -30.68, 69.997, -26.244, 74.562)
+antialiased = true
+
+[node name="Nail" type="Polygon2D" parent="Hand/Shape"]
+color = Color(1.0, 0.85, 0.85, 1.0)
+polygon = PackedVector2Array(0.0, 5.0, 2.296, 5.457, 4.243, 6.757, 5.543, 8.704, 6.0, 11.0, 6.0, 14.0, 5.543, 16.296, 4.243, 18.243, 2.296, 19.543, 0.0, 20.0, -2.296, 19.543, -4.243, 18.243, -5.543, 16.296, -6.0, 14.0, -6.0, 11.0, -5.543, 8.704, -4.243, 6.757, -2.296, 5.457, 0.0, 5.0)
+antialiased = true
+
+[node name="Knuckle0" type="Line2D" parent="Hand/Shape"]
+points = PackedVector2Array(-12.0, 64.0, -12.0, 76.0)
+width = 3.0
+default_color = Color(0.85, 0.78, 0.8, 1.0)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Knuckle1" type="Line2D" parent="Hand/Shape"]
+points = PackedVector2Array(6.0, 64.0, 6.0, 76.0)
+width = 3.0
+default_color = Color(0.85, 0.78, 0.8, 1.0)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Knuckle2" type="Line2D" parent="Hand/Shape"]
+points = PackedVector2Array(24.0, 64.0, 24.0, 76.0)
+width = 3.0
+default_color = Color(0.85, 0.78, 0.8, 1.0)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="TipGlow" type="Sprite2D" parent="Hand"]
+modulate = Color(1.0, 1.0, 1.0, 0.55)
+position = Vector2(0.0, 0.0)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_r")
+material = ExtResource("2_r")

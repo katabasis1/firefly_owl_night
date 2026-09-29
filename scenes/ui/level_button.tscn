@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/level_button.gd" id="1_r"]
+[ext_resource type="FontFile" path="res://ui/NotoSans-Black.ttf" id="2_r"]
+
+[node name="LevelButton" type="Button"]
+custom_minimum_size = Vector2(104.0, 110.0)
+theme_type_variation = &"LevelButton"
+script = ExtResource("1_r")
+
+[node name="Num" type="Label" parent="."]
+offset_left = 0.0
+offset_top = 2.0
+offset_right = 104.0
+offset_bottom = 80.0
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 46
+theme_override_colors/font_color = Color(1.0, 0.95, 0.85, 1.0)
+theme_override_fonts/font = ExtResource("2_r")
+
+[node name="Stars" type="Node2D" parent="."]
+position = Vector2(52.0, 88.0)
+
+[node name="S1" type="Polygon2D" parent="Stars"]
+color = Color(1.0, 1.0, 1.0, 1.0)
+polygon = PackedVector2Array(-24.0, -8.0, -21.296, -1.721, -14.489, -1.09, -19.625, 3.421, -18.122, 10.09, -24.0, 6.6, -29.878, 10.09, -28.375, 3.421, -33.511, -1.09, -26.704, -1.721)
+antialiased = true
+
+[node name="S2" type="Polygon2D" parent="Stars"]
+color = Color(1.0, 1.0, 1.0, 1.0)
+polygon = PackedVector2Array(0.0, -11.0, 2.704, -4.721, 9.511, -4.09, 4.375, 0.421, 5.878, 7.09, 0.0, 3.6, -5.878, 7.09, -4.375, 0.421, -9.511, -4.09, -2.704, -4.721)
+antialiased = true
+
+[node name="S3" type="Polygon2D" parent="Stars"]
+color = Color(1.0, 1.0, 1.0, 1.0)
+polygon = PackedVector2Array(24.0, -8.0, 26.704, -1.721, 33.511, -1.09, 28.375, 3.421, 29.878, 10.09, 24.0, 6.6, 18.122, 10.09, 19.625, 3.421, 14.489, -1.09, 21.296, -1.721)
+antialiased = true
+
+[node name="Lock" type="Node2D" parent="."]
+position = Vector2(52.0, 56.0)
+visible = false
+
+[node name="Shackle" type="Line2D" parent="Lock"]
+points = PackedVector2Array(-11.0, -6.0, -10.625, -8.847, -9.526, -11.5, -7.778, -13.778, -5.5, -15.526, -2.847, -16.625, 0.0, -17.0, 2.847, -16.625, 5.5, -15.526, 7.778, -13.778, 9.526, -11.5, 10.625, -8.847, 11.0, -6.0)
+width = 5.0
+default_color = Color(0.5, 0.45, 0.72, 1.0)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Body" type="Polygon2D" parent="Lock"]
+color = Color(0.5, 0.45, 0.72, 1.0)
+polygon = PackedVector2Array(12.0, -6.0, 13.035, -5.864, 14.0, -5.464, 14.828, -4.828, 15.464, -4.0, 15.864, -3.035, 16.0, -2.0, 16.0, 12.0, 15.864, 13.035, 15.464, 14.0, 14.828, 14.828, 14.0, 15.464, 13.035, 15.864, 12.0, 16.0, -12.0, 16.0, -13.035, 15.864, -14.0, 15.464, -14.828, 14.828, -15.464, 14.0, -15.864, 13.035, -16.0, 12.0, -16.0, -2.0, -15.864, -3.035, -15.464, -4.0, -14.828, -4.828, -14.0, -5.464, -13.035, -5.864, -12.0, -6.0)
+antialiased = true

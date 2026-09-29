@@ -1,0 +1,216 @@
+[gd_scene load_steps=47 format=3]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_01.tscn" id="2_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_02.tscn" id="3_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_03.tscn" id="4_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_04.tscn" id="5_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_05.tscn" id="6_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_06.tscn" id="7_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_07.tscn" id="8_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_08.tscn" id="9_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_09.tscn" id="10_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_10.tscn" id="11_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_11.tscn" id="12_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_12.tscn" id="13_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_13.tscn" id="14_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_14.tscn" id="15_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_15.tscn" id="16_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_16.tscn" id="17_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_17.tscn" id="18_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_18.tscn" id="19_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_19.tscn" id="20_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_20.tscn" id="21_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_21.tscn" id="22_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_22.tscn" id="23_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_23.tscn" id="24_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_24.tscn" id="25_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_25.tscn" id="26_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_26.tscn" id="27_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_27.tscn" id="28_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_28.tscn" id="29_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_29.tscn" id="30_r"]
+[ext_resource type="PackedScene" path="res://scenes/levels/level_30.tscn" id="31_r"]
+[ext_resource type="PackedScene" path="res://scenes/background.tscn" id="32_r"]
+[ext_resource type="PackedScene" path="res://scenes/background_swamp.tscn" id="33_r"]
+[ext_resource type="PackedScene" path="res://scenes/background_glade.tscn" id="34_r"]
+[ext_resource type="PackedScene" path="res://scenes/objects/firefly.tscn" id="35_r"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="36_r"]
+[ext_resource type="PackedScene" path="res://scenes/ui/menu.tscn" id="37_r"]
+[ext_resource type="PackedScene" path="res://scenes/ui/win_panel.tscn" id="38_r"]
+[ext_resource type="PackedScene" path="res://scenes/ui/lose_panel.tscn" id="39_r"]
+[ext_resource type="Script" path="res://scripts/pulse.gd" id="40_r"]
+[ext_resource type="Shader" path="res://shaders/vignette.gdshader" id="41_r"]
+[ext_resource type="Shader" path="res://shaders/time_freeze.gdshader" id="42_r"]
+[ext_resource type="Material" path="res://art/add.tres" id="43_r"]
+[ext_resource type="Texture2D" path="res://art/glow.tres" id="44_r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1"]
+shader = ExtResource("41_r")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2"]
+shader = ExtResource("42_r")
+shader_parameter/amount = 0.0
+
+[node name="Main" type="Node"]
+script = ExtResource("1_r")
+levels = Array[PackedScene]([ExtResource("2_r"), ExtResource("3_r"), ExtResource("4_r"), ExtResource("5_r"), ExtResource("6_r"), ExtResource("7_r"), ExtResource("8_r"), ExtResource("9_r"), ExtResource("10_r"), ExtResource("11_r"), ExtResource("12_r"), ExtResource("13_r"), ExtResource("14_r"), ExtResource("15_r"), ExtResource("16_r"), ExtResource("17_r"), ExtResource("18_r"), ExtResource("19_r"), ExtResource("20_r"), ExtResource("21_r"), ExtResource("22_r"), ExtResource("23_r"), ExtResource("24_r"), ExtResource("25_r"), ExtResource("26_r"), ExtResource("27_r"), ExtResource("28_r"), ExtResource("29_r"), ExtResource("30_r"), ExtResource("31_r")])
+
+[node name="Backgrounds" type="Node2D" parent="."]
+z_index = -10
+
+[node name="Forest" parent="Backgrounds" instance=ExtResource("32_r")]
+visible = true
+
+[node name="Swamp" parent="Backgrounds" instance=ExtResource("33_r")]
+visible = false
+
+[node name="Glade" parent="Backgrounds" instance=ExtResource("34_r")]
+visible = false
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="LevelHolder" type="Node2D" parent="World"]
+
+[node name="TimeFreeze" type="ColorRect" parent="World"]
+mouse_filter = 2
+visible = false
+material = SubResource("ShaderMaterial_2")
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 780.0
+offset_bottom = 1340.0
+
+[node name="PathGlow" type="Line2D" parent="World"]
+points = PackedVector2Array()
+width = 30.0
+default_color = Color(1.0, 0.8, 0.35, 0.22)
+antialiased = true
+material = ExtResource("43_r")
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Path" type="Line2D" parent="World"]
+points = PackedVector2Array()
+width = 9.0
+default_color = Color(1.0, 0.95, 0.72, 1.0)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="PathDanger" type="Line2D" parent="World"]
+points = PackedVector2Array()
+width = 10.0
+default_color = Color(1.0, 0.25, 0.35, 0.95)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="StartHint" type="Node2D" parent="World"]
+position = Vector2(360.0, 1130.0)
+
+[node name="Ring" type="Line2D" parent="World/StartHint"]
+points = PackedVector2Array(62.0, 0.0, 61.237, 9.699, 58.966, 19.159, 55.242, 28.147, 50.159, 36.443, 43.841, 43.841, 36.443, 50.159, 28.147, 55.242, 19.159, 58.966, 9.699, 61.237, 0.0, 62.0, -9.699, 61.237, -19.159, 58.966, -28.147, 55.242, -36.443, 50.159, -43.841, 43.841, -50.159, 36.443, -55.242, 28.147, -58.966, 19.159, -61.237, 9.699, -62.0, 0.0, -61.237, -9.699, -58.966, -19.159, -55.242, -28.147, -50.159, -36.443, -43.841, -43.841, -36.443, -50.159, -28.147, -55.242, -19.159, -58.966, -9.699, -61.237, 0.0, -62.0, 9.699, -61.237, 19.159, -58.966, 28.147, -55.242, 36.443, -50.159, 43.841, -43.841, 50.159, -36.443, 55.242, -28.147, 58.966, -19.159, 61.237, -9.699, 62.0, 0.0)
+width = 4.0
+default_color = Color(1.0, 0.9, 0.5, 0.75)
+antialiased = true
+script = ExtResource("40_r")
+amount = 0.12
+speed = 4.0
+fade = 0.6
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Ring2" type="Line2D" parent="World/StartHint"]
+points = PackedVector2Array(82.0, 0.0, 81.298, 10.703, 79.206, 21.223, 75.758, 31.38, 71.014, 41.0, 65.055, 49.918, 57.983, 57.983, 49.918, 65.055, 41.0, 71.014, 31.38, 75.758, 21.223, 79.206, 10.703, 81.298, 0.0, 82.0, -10.703, 81.298, -21.223, 79.206, -31.38, 75.758, -41.0, 71.014, -49.918, 65.055, -57.983, 57.983, -65.055, 49.918, -71.014, 41.0, -75.758, 31.38, -79.206, 21.223, -81.298, 10.703, -82.0, 0.0, -81.298, -10.703, -79.206, -21.223, -75.758, -31.38, -71.014, -41.0, -65.055, -49.918, -57.983, -57.983, -49.918, -65.055, -41.0, -71.014, -31.38, -75.758, -21.223, -79.206, -10.703, -81.298, 0.0, -82.0, 10.703, -81.298, 21.223, -79.206, 31.38, -75.758, 41.0, -71.014, 49.918, -65.055, 57.983, -57.983, 65.055, -49.918, 71.014, -41.0, 75.758, -31.38, 79.206, -21.223, 81.298, -10.703, 82.0, 0.0)
+width = 2.0
+default_color = Color(1.0, 0.9, 0.5, 0.3)
+antialiased = true
+script = ExtResource("40_r")
+amount = 0.08
+speed = 4.0
+fade = 0.5
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Ghost" type="Node2D" parent="World"]
+visible = false
+
+[node name="Glow" type="Sprite2D" parent="World/Ghost"]
+modulate = Color(1.0, 0.9, 0.5, 0.8)
+position = Vector2(0.0, 0.0)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("44_r")
+material = ExtResource("43_r")
+
+[node name="Ring" type="Line2D" parent="World/Ghost"]
+points = PackedVector2Array(22.0, 0.0, 21.448, 4.895, 19.821, 9.545, 17.2, 13.717, 13.717, 17.2, 9.545, 19.821, 4.895, 21.448, 0.0, 22.0, -4.895, 21.448, -9.545, 19.821, -13.717, 17.2, -17.2, 13.717, -19.821, 9.545, -21.448, 4.895, -22.0, 0.0, -21.448, -4.895, -19.821, -9.545, -17.2, -13.717, -13.717, -17.2, -9.545, -19.821, -4.895, -21.448, 0.0, -22.0, 4.895, -21.448, 9.545, -19.821, 13.717, -17.2, 17.2, -13.717, 19.821, -9.545, 21.448, -4.895, 22.0, 0.0)
+width = 3.0
+default_color = Color(1.0, 1.0, 1.0, 0.8)
+antialiased = true
+script = ExtResource("40_r")
+amount = 0.18
+speed = 8.0
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Dot" type="Polygon2D" parent="World/Ghost"]
+color = Color(1.0, 1.0, 0.85, 1.0)
+polygon = PackedVector2Array(7.0, 0.0, 6.467, 2.679, 4.95, 4.95, 2.679, 6.467, 0.0, 7.0, -2.679, 6.467, -4.95, 4.95, -6.467, 2.679, -7.0, 0.0, -6.467, -2.679, -4.95, -4.95, -2.679, -6.467, 0.0, -7.0, 2.679, -6.467, 4.95, -4.95, 6.467, -2.679)
+antialiased = true
+
+[node name="Firefly" parent="World" instance=ExtResource("35_r")]
+position = Vector2(360.0, 1130.0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Overlay" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Vignette" type="ColorRect" parent="Overlay"]
+layout_mode = 1
+mouse_filter = 2
+material = SubResource("ShaderMaterial_1")
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Flash" type="ColorRect" parent="Overlay"]
+layout_mode = 1
+mouse_filter = 2
+color = Color(1.0, 1.0, 1.0, 0.0)
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HUD" parent="." instance=ExtResource("36_r")]
+
+[node name="Popups" type="CanvasLayer" parent="."]
+layer = 15
+
+[node name="WinPanel" parent="Popups" instance=ExtResource("38_r")]
+
+[node name="LosePanel" parent="Popups" instance=ExtResource("39_r")]
+
+[node name="Menu" parent="." instance=ExtResource("37_r")]
+
+[node name="Fade" type="CanvasLayer" parent="."]
+layer = 30
+
+[node name="Rect" type="ColorRect" parent="Fade"]
+layout_mode = 1
+mouse_filter = 2
+color = Color(0.02, 0.01, 0.06, 0.0)
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

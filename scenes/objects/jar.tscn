@@ -1,0 +1,129 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/jar.gd" id="1_r"]
+[ext_resource type="Texture2D" path="res://art/glow.tres" id="2_r"]
+[ext_resource type="Material" path="res://art/add.tres" id="3_r"]
+
+[sub_resource type="Gradient" id="Gradient_1"]
+offsets = PackedFloat32Array(0.0, 0.5, 1.0)
+colors = PackedColorArray(1.0, 0.9, 0.4, 0.0, 1.0, 0.95, 0.5, 1.0, 1.0, 0.9, 0.4, 0.0)
+
+[sub_resource type="Gradient" id="Gradient_2"]
+offsets = PackedFloat32Array(0.0, 0.5, 1.0)
+colors = PackedColorArray(1.0, 0.97, 0.7, 1.0, 1.0, 0.75, 0.3, 0.8, 1.0, 0.5, 0.2, 0.0)
+
+[node name="Jar" type="Node2D"]
+script = ExtResource("1_r")
+
+[node name="Ring" type="Line2D" parent="."]
+points = PackedVector2Array(82.0, 4.0, 81.298, 14.703, 79.206, 25.223, 75.758, 35.38, 71.014, 45.0, 65.055, 53.918, 57.983, 61.983, 49.918, 69.055, 41.0, 75.014, 31.38, 79.758, 21.223, 83.206, 10.703, 85.298, 0.0, 86.0, -10.703, 85.298, -21.223, 83.206, -31.38, 79.758, -41.0, 75.014, -49.918, 69.055, -57.983, 61.983, -65.055, 53.918, -71.014, 45.0, -75.758, 35.38, -79.206, 25.223, -81.298, 14.703, -82.0, 4.0, -81.298, -6.703, -79.206, -17.223, -75.758, -27.38, -71.014, -37.0, -65.055, -45.918, -57.983, -53.983, -49.918, -61.055, -41.0, -67.014, -31.38, -71.758, -21.223, -75.206, -10.703, -77.298, 0.0, -78.0, 10.703, -77.298, 21.223, -75.206, 31.38, -71.758, 41.0, -67.014, 49.918, -61.055, 57.983, -53.983, 65.055, -45.918, 71.014, -37.0, 75.758, -27.38, 79.206, -17.223, 81.298, -6.703, 82.0, 4.0)
+width = 4.0
+default_color = Color(1.0, 0.85, 0.4, 0.8)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="InnerGlow" type="Sprite2D" parent="."]
+modulate = Color(1.0, 0.85, 0.4, 0.35)
+position = Vector2(0.0, 10.0)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_r")
+material = ExtResource("3_r")
+
+[node name="Family" type="CPUParticles2D" parent="."]
+emitting = true
+texture = ExtResource("2_r")
+material = ExtResource("3_r")
+position = Vector2(0.0, 12.0)
+amount = 7
+lifetime = 2.5
+emission_shape = 3
+emission_rect_extents = Vector2(26.0, 30.0)
+spread = 180.0
+gravity = Vector2(0.0, 0.0)
+initial_velocity_min = 4.0
+initial_velocity_max = 14.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_1")
+
+[node name="Glass" type="Node2D" parent="."]
+
+[node name="Body" type="Polygon2D" parent="Glass"]
+color = Color(0.6, 0.85, 1.0, 0.16)
+polygon = PackedVector2Array(20.0, -38.0, 24.292, -37.577, 28.419, -36.325, 32.223, -34.292, 35.556, -31.556, 38.292, -28.223, 40.325, -24.419, 41.577, -20.292, 42.0, -16.0, 42.0, 36.0, 41.577, 40.292, 40.325, 44.419, 38.292, 48.223, 35.556, 51.556, 32.223, 54.292, 28.419, 56.325, 24.292, 57.577, 20.0, 58.0, -20.0, 58.0, -24.292, 57.577, -28.419, 56.325, -32.223, 54.292, -35.556, 51.556, -38.292, 48.223, -40.325, 44.419, -41.577, 40.292, -42.0, 36.0, -42.0, -16.0, -41.577, -20.292, -40.325, -24.419, -38.292, -28.223, -35.556, -31.556, -32.223, -34.292, -28.419, -36.325, -24.292, -37.577, -20.0, -38.0)
+antialiased = true
+
+[node name="Edge" type="Line2D" parent="Glass"]
+points = PackedVector2Array(20.0, -38.0, 24.292, -37.577, 28.419, -36.325, 32.223, -34.292, 35.556, -31.556, 38.292, -28.223, 40.325, -24.419, 41.577, -20.292, 42.0, -16.0, 42.0, 36.0, 41.577, 40.292, 40.325, 44.419, 38.292, 48.223, 35.556, 51.556, 32.223, 54.292, 28.419, 56.325, 24.292, 57.577, 20.0, 58.0, -20.0, 58.0, -24.292, 57.577, -28.419, 56.325, -32.223, 54.292, -35.556, 51.556, -38.292, 48.223, -40.325, 44.419, -41.577, 40.292, -42.0, 36.0, -42.0, -16.0, -41.577, -20.292, -40.325, -24.419, -38.292, -28.223, -35.556, -31.556, -32.223, -34.292, -28.419, -36.325, -24.292, -37.577, -20.0, -38.0, 20.0, -38.0)
+width = 4.0
+default_color = Color(0.8, 0.95, 1.0, 0.8)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Neck" type="Polygon2D" parent="Glass"]
+color = Color(0.6, 0.85, 1.0, 0.28)
+polygon = PackedVector2Array(25.0, -50.0, 26.294, -49.83, 27.5, -49.33, 28.536, -48.536, 29.33, -47.5, 29.83, -46.294, 30.0, -45.0, 30.0, -41.0, 29.83, -39.706, 29.33, -38.5, 28.536, -37.464, 27.5, -36.67, 26.294, -36.17, 25.0, -36.0, -25.0, -36.0, -26.294, -36.17, -27.5, -36.67, -28.536, -37.464, -29.33, -38.5, -29.83, -39.706, -30.0, -41.0, -30.0, -45.0, -29.83, -46.294, -29.33, -47.5, -28.536, -48.536, -27.5, -49.33, -26.294, -49.83, -25.0, -50.0)
+antialiased = true
+
+[node name="Shine" type="Line2D" parent="Glass"]
+points = PackedVector2Array(-27.0, -20.0, -27.0, 32.0)
+width = 6.0
+default_color = Color(1.0, 1.0, 1.0, 0.4)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Shine2" type="Line2D" parent="Glass"]
+points = PackedVector2Array(-27.0, 42.0, -27.0, 45.0)
+width = 6.0
+default_color = Color(1.0, 1.0, 1.0, 0.4)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Rope" type="Line2D" parent="Glass"]
+points = PackedVector2Array(-32.0, -43.0, 32.0, -43.0)
+width = 5.0
+default_color = Color(0.88, 0.72, 0.45, 1.0)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="Lid" type="Node2D" parent="."]
+
+[node name="LidBody" type="Polygon2D" parent="Lid"]
+color = Color(0.62, 0.38, 0.22, 1.0)
+polygon = PackedVector2Array(31.0, -66.0, 32.553, -65.796, 34.0, -65.196, 35.243, -64.243, 36.196, -63.0, 36.796, -61.553, 37.0, -60.0, 37.0, -56.0, 36.796, -54.447, 36.196, -53.0, 35.243, -51.757, 34.0, -50.804, 32.553, -50.204, 31.0, -50.0, -31.0, -50.0, -32.553, -50.204, -34.0, -50.804, -35.243, -51.757, -36.196, -53.0, -36.796, -54.447, -37.0, -56.0, -37.0, -60.0, -36.796, -61.553, -36.196, -63.0, -35.243, -64.243, -34.0, -65.196, -32.553, -65.796, -31.0, -66.0)
+antialiased = true
+
+[node name="LidTop" type="Polygon2D" parent="Lid"]
+color = Color(0.74, 0.48, 0.28, 1.0)
+polygon = PackedVector2Array(26.0, -73.0, 27.035, -72.864, 28.0, -72.464, 28.828, -71.828, 29.464, -71.0, 29.864, -70.035, 30.0, -69.0, 30.0, -67.0, 29.864, -65.965, 29.464, -65.0, 28.828, -64.172, 28.0, -63.536, 27.035, -63.136, 26.0, -63.0, -26.0, -63.0, -27.035, -63.136, -28.0, -63.536, -28.828, -64.172, -29.464, -65.0, -29.864, -65.965, -30.0, -67.0, -30.0, -69.0, -29.864, -70.035, -29.464, -71.0, -28.828, -71.828, -28.0, -72.464, -27.035, -72.864, -26.0, -73.0)
+antialiased = true
+
+[node name="Burst" type="CPUParticles2D" parent="."]
+emitting = false
+texture = ExtResource("2_r")
+material = ExtResource("3_r")
+amount = 48
+lifetime = 1.1
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0.0, 140.0)
+initial_velocity_min = 180.0
+initial_velocity_max = 440.0
+damping_min = 150.0
+damping_max = 260.0
+scale_amount_min = 0.08
+scale_amount_max = 0.24
+hue_variation_min = -0.06
+hue_variation_max = 0.06
+color_ramp = SubResource("Gradient_2")

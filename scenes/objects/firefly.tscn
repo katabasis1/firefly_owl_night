@@ -1,0 +1,111 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/firefly.gd" id="1_r"]
+[ext_resource type="Texture2D" path="res://art/glow.tres" id="2_r"]
+[ext_resource type="Material" path="res://art/add.tres" id="3_r"]
+
+[sub_resource type="Gradient" id="Gradient_1"]
+offsets = PackedFloat32Array(0.0, 1.0)
+colors = PackedColorArray(1.0, 0.95, 0.55, 1.0, 1.0, 0.6, 0.2, 0.0)
+
+[node name="Firefly" type="Node2D"]
+script = ExtResource("1_r")
+
+[node name="Trail" type="CPUParticles2D" parent="."]
+emitting = false
+texture = ExtResource("2_r")
+material = ExtResource("3_r")
+amount = 40
+lifetime = 0.7
+local_coords = false
+emission_shape = 1
+emission_sphere_radius = 6.0
+direction = Vector2(0.0, 1.0)
+spread = 180.0
+gravity = Vector2(0.0, -30.0)
+initial_velocity_min = 10.0
+initial_velocity_max = 40.0
+scale_amount_min = 0.07
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_1")
+
+[node name="Glow" type="Sprite2D" parent="."]
+modulate = Color(1.0, 0.85, 0.35, 0.75)
+position = Vector2(0.0, 4.0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_r")
+material = ExtResource("3_r")
+
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="WingL" type="Polygon2D" parent="Visual"]
+color = Color(0.85, 0.95, 1.0, 0.6)
+polygon = PackedVector2Array(0.409, -12.233, 0.888, -10.43, 0.558, -8.326, -0.56, -6.063, -2.389, -3.796, -4.806, -1.679, -7.644, 0.143, -10.711, 1.547, -13.798, 2.436, -16.694, 2.751, -19.202, 2.469, -21.151, 1.61, -22.409, 0.233, -22.888, -1.57, -22.558, -3.674, -21.44, -5.937, -19.611, -8.204, -17.194, -10.321, -14.356, -12.143, -11.289, -13.547, -8.202, -14.436, -5.306, -14.751, -2.798, -14.469, -0.849, -13.61)
+antialiased = true
+position = Vector2(-3.0, -10.0)
+
+[node name="WingR" type="Polygon2D" parent="Visual"]
+color = Color(0.85, 0.95, 1.0, 0.6)
+polygon = PackedVector2Array(22.409, 0.233, 21.151, 1.61, 19.202, 2.469, 16.694, 2.751, 13.798, 2.436, 10.711, 1.547, 7.644, 0.143, 4.806, -1.679, 2.389, -3.796, 0.56, -6.063, -0.558, -8.326, -0.888, -10.43, -0.409, -12.233, 0.849, -13.61, 2.798, -14.469, 5.306, -14.751, 8.202, -14.436, 11.289, -13.547, 14.356, -12.143, 17.194, -10.321, 19.611, -8.204, 21.44, -5.937, 22.558, -3.674, 22.888, -1.57)
+antialiased = true
+position = Vector2(3.0, -10.0)
+
+[node name="Tail" type="Polygon2D" parent="Visual"]
+color = Color(1.0, 0.95, 0.45, 1.0)
+polygon = PackedVector2Array(10.0, 9.0, 9.659, 12.106, 8.66, 15.0, 7.071, 17.485, 5.0, 19.392, 2.588, 20.591, 0.0, 21.0, -2.588, 20.591, -5.0, 19.392, -7.071, 17.485, -8.66, 15.0, -9.659, 12.106, -10.0, 9.0, -9.659, 5.894, -8.66, 3.0, -7.071, 0.515, -5.0, -1.392, -2.588, -2.591, 0.0, -3.0, 2.588, -2.591, 5.0, -1.392, 7.071, 0.515, 8.66, 3.0, 9.659, 5.894)
+antialiased = true
+
+[node name="TailGlow" type="Sprite2D" parent="Visual"]
+modulate = Color(1.0, 1.0, 0.7, 0.9)
+position = Vector2(0.0, 9.0)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("2_r")
+material = ExtResource("3_r")
+
+[node name="Body" type="Polygon2D" parent="Visual"]
+color = Color(0.24, 0.16, 0.33, 1.0)
+polygon = PackedVector2Array(8.0, -5.0, 7.608, -2.219, 6.472, 0.29, 4.702, 2.281, 2.472, 3.56, 0.0, 4.0, -2.472, 3.56, -4.702, 2.281, -6.472, 0.29, -7.608, -2.219, -8.0, -5.0, -7.608, -7.781, -6.472, -10.29, -4.702, -12.281, -2.472, -13.56, 0.0, -14.0, 2.472, -13.56, 4.702, -12.281, 6.472, -10.29, 7.608, -7.781)
+antialiased = true
+
+[node name="Head" type="Polygon2D" parent="Visual"]
+color = Color(0.24, 0.16, 0.33, 1.0)
+polygon = PackedVector2Array(8.0, -16.0, 7.608, -13.528, 6.472, -11.298, 4.702, -9.528, 2.472, -8.392, 0.0, -8.0, -2.472, -8.392, -4.702, -9.528, -6.472, -11.298, -7.608, -13.528, -8.0, -16.0, -7.608, -18.472, -6.472, -20.702, -4.702, -22.472, -2.472, -23.608, 0.0, -24.0, 2.472, -23.608, 4.702, -22.472, 6.472, -20.702, 7.608, -18.472)
+antialiased = true
+
+[node name="AntL" type="Line2D" parent="Visual"]
+points = PackedVector2Array(-3.0, -22.0, -7.0, -30.0, -12.0, -33.0)
+width = 2.0
+default_color = Color(0.24, 0.16, 0.33, 1.0)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="AntR" type="Line2D" parent="Visual"]
+points = PackedVector2Array(3.0, -22.0, 7.0, -30.0, 12.0, -33.0)
+width = 2.0
+default_color = Color(0.24, 0.16, 0.33, 1.0)
+antialiased = true
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="EyeL" type="Polygon2D" parent="Visual"]
+color = Color(1.0, 1.0, 1.0, 1.0)
+polygon = PackedVector2Array(-0.2, -17.0, -0.527, -15.568, -1.442, -14.42, -2.766, -13.783, -4.234, -13.783, -5.558, -14.42, -6.473, -15.568, -6.8, -17.0, -6.473, -18.432, -5.558, -19.58, -4.234, -20.217, -2.766, -20.217, -1.442, -19.58, -0.527, -18.432)
+antialiased = true
+
+[node name="EyeR" type="Polygon2D" parent="Visual"]
+color = Color(1.0, 1.0, 1.0, 1.0)
+polygon = PackedVector2Array(6.8, -17.0, 6.473, -15.568, 5.558, -14.42, 4.234, -13.783, 2.766, -13.783, 1.442, -14.42, 0.527, -15.568, 0.2, -17.0, 0.527, -18.432, 1.442, -19.58, 2.766, -20.217, 4.234, -20.217, 5.558, -19.58, 6.473, -18.432)
+antialiased = true
+
+[node name="PupilL" type="Polygon2D" parent="Visual"]
+color = Color(0.08, 0.05, 0.12, 1.0)
+polygon = PackedVector2Array(-1.2, -16.5, -1.544, -15.442, -2.444, -14.788, -3.556, -14.788, -4.456, -15.442, -4.8, -16.5, -4.456, -17.558, -3.556, -18.212, -2.444, -18.212, -1.544, -17.558)
+antialiased = true
+
+[node name="PupilR" type="Polygon2D" parent="Visual"]
+color = Color(0.08, 0.05, 0.12, 1.0)
+polygon = PackedVector2Array(5.8, -16.5, 5.456, -15.442, 4.556, -14.788, 3.444, -14.788, 2.544, -15.442, 2.2, -16.5, 2.544, -17.558, 3.444, -18.212, 4.556, -18.212, 5.456, -17.558)
+antialiased = true

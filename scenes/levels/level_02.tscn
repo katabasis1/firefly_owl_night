@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_r"]
+[ext_resource type="PackedScene" path="res://scenes/objects/mushroom.tscn" id="2_r"]
+[ext_resource type="PackedScene" path="res://scenes/objects/bush.tscn" id="3_r"]
+[ext_resource type="PackedScene" path="res://scenes/objects/dew.tscn" id="4_r"]
+[ext_resource type="PackedScene" path="res://scenes/objects/owl.tscn" id="5_r"]
+[ext_resource type="PackedScene" path="res://scenes/objects/jar.tscn" id="6_r"]
+[ext_resource type="PackedScene" path="res://scenes/objects/tutorial.tscn" id="7_r"]
+
+[sub_resource type="Curve2D" id="Curve2D_1"]
+_data = {
+"points": PackedVector2Array(0.0, 0.0, 0.0, 0.0, 360.0, 1140.0, 0.0, 0.0, 0.0, 0.0, 360.0, 1122.0, 0.0, 0.0, 0.0, 0.0, 360.0, 1104.0, 0.0, 0.0, 0.0, 0.0, 360.0, 1086.0, 0.0, 0.0, 0.0, 0.0, 360.0, 1068.0, 0.0, 0.0, 0.0, 0.0, 360.0, 1050.0, 0.0, 0.0, 0.0, 0.0, 360.0, 1032.0, 0.0, 0.0, 0.0, 0.0, 360.0, 1014.0, 0.0, 0.0, 0.0, 0.0, 360.0, 996.0, 0.0, 0.0, 0.0, 0.0, 360.0, 978.0, 0.0, 0.0, 0.0, 0.0, 360.0, 960.0, 0.0, 0.0, 0.0, 0.0, 360.0, 942.0, 0.0, 0.0, 0.0, 0.0, 360.0, 924.0, 0.0, 0.0, 0.0, 0.0, 360.0, 906.0, 0.0, 0.0, 0.0, 0.0, 360.0, 888.0, 0.0, 0.0, 0.0, 0.0, 360.1, 870.0, 0.0, 0.0, 0.0, 0.0, 360.3, 852.0, 0.0, 0.0, 0.0, 0.0, 360.5, 834.0, 0.0, 0.0, 0.0, 0.0, 360.7, 816.0, 0.0, 0.0, 0.0, 0.0, 361.0, 798.0, 0.0, 0.0, 0.0, 0.0, 361.2, 780.0, 0.0, 0.0, 0.0, 0.0, 361.4, 762.0, 0.0, 0.0, 0.0, 0.0, 361.5, 744.0, 0.0, 0.0, 0.0, 0.0, 361.6, 726.0, 0.0, 0.0, 0.0, 0.0, 361.6, 708.0, 0.0, 0.0, 0.0, 0.0, 361.4, 690.0, 0.0, 0.0, 0.0, 0.0, 361.0, 672.0, 0.0, 0.0, 0.0, 0.0, 360.2, 654.0, 0.0, 0.0, 0.0, 0.0, 358.7, 636.1, 0.0, 0.0, 0.0, 0.0, 355.6, 618.4, 0.0, 0.0, 0.0, 0.0, 349.6, 601.5, 0.0, 0.0, 0.0, 0.0, 340.5, 586.0, 0.0, 0.0, 0.0, 0.0, 334.3, 569.1, 0.0, 0.0, 0.0, 0.0, 328.1, 552.2, 0.0, 0.0, 0.0, 0.0, 322.1, 535.2, 0.0, 0.0, 0.0, 0.0, 314.5, 518.9, 0.0, 0.0, 0.0, 0.0, 306.5, 502.8, 0.0, 0.0, 0.0, 0.0, 301.1, 485.7, 0.0, 0.0, 0.0, 0.0, 300.2, 467.7, 0.0, 0.0, 0.0, 0.0, 302.7, 449.9, 0.0, 0.0, 0.0, 0.0, 306.8, 432.4, 0.0, 0.0, 0.0, 0.0, 311.6, 415.1, 0.0, 0.0, 0.0, 0.0, 317.0, 397.9, 0.0, 0.0, 0.0, 0.0, 322.7, 380.8, 0.0, 0.0, 0.0, 0.0, 328.7, 363.8, 0.0, 0.0, 0.0, 0.0, 335.1, 347.0, 0.0, 0.0, 0.0, 0.0, 342.8, 330.8, 0.0, 0.0, 0.0, 0.0, 351.5, 315.0)
+}
+point_count = 48
+
+[node name="Level02" type="Node2D"]
+script = ExtResource("1_r")
+max_ink = 1850.0
+par_ink = 1550.0
+hint = "Сова видит всё в своём луче. Спрячься в кусте!"
+chapter = 0
+
+[node name="Mushroom1" parent="." instance=ExtResource("2_r")]
+position = Vector2(620.0, 1200.0)
+modulate = Color(1.0, 0.6, 0.95, 1.0)
+
+[node name="Mushroom2" parent="." instance=ExtResource("2_r")]
+position = Vector2(90.0, 1180.0)
+
+[node name="Start" type="Marker2D" parent="."]
+position = Vector2(360.0, 1140.0)
+
+[node name="Bush1" parent="." instance=ExtResource("3_r")]
+position = Vector2(360.0, 640.0)
+radius = 108.0
+
+[node name="Dew1" parent="." instance=ExtResource("4_r")]
+position = Vector2(360.0, 640.0)
+
+[node name="Dew2" parent="." instance=ExtResource("4_r")]
+position = Vector2(600.0, 930.0)
+
+[node name="Dew3" parent="." instance=ExtResource("4_r")]
+position = Vector2(180.0, 420.0)
+
+[node name="Owl1" parent="." instance=ExtResource("5_r")]
+position = Vector2(95.0, 640.0)
+base_angle = 0.0
+sweep = 0.0
+period = 4.0
+phase = 0.0
+view_range = 560.0
+view_fov = 40.0
+sleep_time = 0.0
+awake_time = 3.0
+cycle_offset = 0.0
+
+[node name="Jar" parent="." instance=ExtResource("6_r")]
+position = Vector2(360.0, 290.0)
+
+[node name="Tutorial" parent="." instance=ExtResource("7_r")]
+curve = SubResource("Curve2D_1")
+auto_play = true
